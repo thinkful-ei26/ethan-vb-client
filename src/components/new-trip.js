@@ -26,7 +26,7 @@ class NewTripForm extends React.Component {
             name="tripName" 
             // validate={[required, notEmpty, length]} 
       />
-      <Field 
+      {/* <Field 
             component={NewTripInput}
             element="input"
             label="What do you want to do on your trip?" 
@@ -39,7 +39,7 @@ class NewTripForm extends React.Component {
         <option value="missing-part">Part of my order was missing</option>
         <option value="damaged">Some of my order arrived damaged</option>
         <option value="other">Other (give details below)</option>
-        </Field> 
+        </Field>  */}
       <button type="submit">Add your trip!</button>
     </form>
     )}
