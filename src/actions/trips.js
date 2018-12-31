@@ -50,7 +50,7 @@ export const addTripSuccess = (data) => {
 export const fetchTrips = () => {
   return(dispatch) => {
     dispatch(fetchTripsRequest());
-    // console.log(`${API_BASE_URL}/trips`);
+    console.log(`${API_BASE_URL}/trips`);
     fetch(`${API_BASE_URL}/trips`)
       .then(res => res.json())
       .then(trips => dispatch(fetchTripsSuccess(trips.trips)))
