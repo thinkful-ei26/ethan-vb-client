@@ -4,26 +4,35 @@ import './index.css';
 // import App from './App';
 import AllTripsList from './components/all-trips-list';
 import * as serviceWorker from './serviceWorker';
+import {Provider} from 'react-redux';
+import store from './store';
 
-ReactDOM.render(<AllTripsList trips = {[
-  {
-    user: 'tom',
-    selectedOptions: ['skiing', 'breweries'],
-    duration: 9
-  },
+// ReactDOM.render(<AllTripsList trips = {[
+//   {
+//     user: 'tom',
+//     selectedOptions: ['skiing', 'breweries'],
+//     duration: 9
+//   },
 
-  {
-    user: 'frank',
-    selectedOptions: ['beaches'],
-    duration: 9
-  },
+//   {
+//     user: 'frank',
+//     selectedOptions: ['beaches'],
+//     duration: 9
+//   },
   
-  {
-    user: 'tom',
-    selectedOptions: ['city'],
-    duration: 9
-  }
-]} />, document.getElementById('root'));
+//   {
+//     user: 'tom',
+//     selectedOptions: ['city'],
+//     duration: 9
+//   }
+// ]} />, document.getElementById('root'));
+console.log(store);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <AllTripsList />
+  </Provider>
+  , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
