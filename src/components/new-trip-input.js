@@ -20,7 +20,6 @@ export default class NewTripInput extends React.Component{
     }
 
     return(
-     
       <div>
          <label htmlFor={this.props.input.name}>
             {this.props.label}
