@@ -1,4 +1,5 @@
 import React from 'react';
+import Multiselect from 'react-widgets/lib/Multiselect';
 
 export default class NewTripInput extends React.Component{
   render(){

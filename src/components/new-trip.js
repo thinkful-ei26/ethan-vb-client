@@ -1,6 +1,7 @@
 import React from 'react';
 
 import {Field, reduxForm, reset} from 'redux-form';
+// import Multiselect from 'react-widgets/lib/Multiselect';
 
 import NewTripInput from './new-trip-input';
 import { addTrip } from '../actions/trips';
@@ -9,9 +10,9 @@ class NewTripForm extends React.Component {
 
   onSubmit(value) {
     console.log(value);
-    const newCheese = value.newCheese;
-    this.props.dispatch(addTrip(newCheese));
-    this.props.dispatch(reset('NewCheese'));
+    const newTrip = value.newTrip;
+    this.props.dispatch(addTrip(newTrip));
+    this.props.dispatch(reset('tripName'));
   }
 
   render(){
@@ -24,8 +25,22 @@ class NewTripForm extends React.Component {
             type="input" 
             name="tripName" 
             // validate={[required, notEmpty, length]} 
-            />
-      <button type="submit">Add your cheese</button>
+      />
+      <Field 
+            component={NewTripInput}
+            element="input"
+            label="What do you want to do on your trip?" 
+            type="checkbox"
+            name="selectedOptions" 
+            // validate={[required, notEmpty, length]} 
+      >
+        <option value="not-delivered">My delivery hasn't arrived</option>
+        <option value="wrong-item">The wrong item was delivered</option>
+        <option value="missing-part">Part of my order was missing</option>
+        <option value="damaged">Some of my order arrived damaged</option>
+        <option value="other">Other (give details below)</option>
+        </Field> 
+      <button type="submit">Add your trip!</button>
     </form>
     )}
 }

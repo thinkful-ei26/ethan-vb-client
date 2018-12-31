@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 import AllTripsList from './components/all-trips-list';
+import NewTrip from './components/new-trip';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import store from './store';
@@ -31,6 +32,7 @@ console.log(store);
 ReactDOM.render(
   <Provider store={store}>
     <AllTripsList />
+    <NewTrip />
   </Provider>
   , document.getElementById('root'));
 
