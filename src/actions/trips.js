@@ -47,20 +47,42 @@ export const addTripSuccess = (data) => {
 }
 
 
+// export const fetchTrips = () => {
+//   return(dispatch) => {
+//     dispatch(fetchTripsRequest());
+//     console.log(`${API_BASE_URL}/trips`);
+//     fetch(`${API_BASE_URL}/trips`)
+//       .then(res => {
+//         // console.log(res.json());
+//         res.json();
+//       })
+//       .then(trips => {
+//         // console.log(trips.body);
+//         dispatch(fetchTripsSuccess(trips.trips))
+//       })
+//       .catch(err => dispatch(fetchTripsError(err)))
+//   }
+// }
+
 export const fetchTrips = () => {
   return(dispatch) => {
     dispatch(fetchTripsRequest());
-    console.log(`${API_BASE_URL}/trips`);
+    // console.log(`${API_BASE_URL}/trips`);
     fetch(`${API_BASE_URL}/trips`)
       .then(res => res.json())
-      .then(trips => dispatch(fetchTripsSuccess(trips.trips)))
+      .then(trips => dispatch(fetchTripsSuccess(trips)))
       .catch(err => dispatch(fetchTripsError(err)))
   }
 }
 
+
 export const addTrip = (value) => {
   console.log(value)
-  const tripObj = {"name": value};
+  const tripObj = {
+    "name": value.tripName,
+    "duration": value.duration
+  };
+  console.log(tripObj);
   return(dispatch) => {
     dispatch(addTripRequest());
     fetch(`${API_BASE_URL}/trips`, 
@@ -73,7 +95,8 @@ export const addTrip = (value) => {
       }
     })
       .then(res => res.json())
-      .then(cheeses => dispatch(fetchTripsSuccess(cheeses.cheeses)))
+      .then(trips => dispatch(addTripSuccess(trips)))
+      .then(fetchTrips())
       .catch(err => dispatch(addTripError(err)))
   }
 }

@@ -8,16 +8,21 @@ export class AllTripsList extends React.Component {
 
   }
 
+  // componentDidUpdate() {
+  //   this.props.dispatch(fetchTrips());
+  // }
+
   render () {
     console.log(this.props);
     let tripsList;
     // tripsListOptions = this.props.trips.map
     tripsList = this.props.trips.map((trip, index) => <section key={index}>
-    <h3>{trip.user}</h3>
+    <h3>{trip.name}</h3>
     <ul> <h5>Trip Options</h5>
       {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
     </ul>
-    <p>Trip Duration: {trip.duration} days </p>
+    <span>Trip Duration: {trip.duration} days </span>
+    <span>Where should {trip.name} go?</span>
     </section>);
 
     return <main>

@@ -4,14 +4,15 @@ import {Field, reduxForm, reset} from 'redux-form';
 // import Multiselect from 'react-widgets/lib/Multiselect';
 
 import NewTripInput from './new-trip-input';
-import { addTrip } from '../actions/trips';
+import { addTrip, fetchTrips } from '../actions/trips';
 
 class NewTripForm extends React.Component {
 
   onSubmit(value) {
     console.log(value);
-    const newTrip = value.newTrip;
+    const newTrip = value;
     this.props.dispatch(addTrip(newTrip));
+    this.props.dispatch(fetchTrips());
     this.props.dispatch(reset('tripName'));
   }
 
@@ -40,6 +41,14 @@ class NewTripForm extends React.Component {
         <option value="damaged">Some of my order arrived damaged</option>
         <option value="other">Other (give details below)</option>
         </Field>  */}
+        <Field 
+            component={NewTripInput}
+            element="input"
+            label="How long is your trip (in days)?" 
+            type="number" 
+            name="duration" 
+            // validate={[required, notEmpty, length]} 
+      />
       <button type="submit">Add your trip!</button>
     </form>
     )}

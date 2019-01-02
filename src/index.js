@@ -27,12 +27,12 @@ import store from './store';
 //     duration: 9
 //   }
 // ]} />, document.getElementById('root'));
-console.log(store);
+// console.log(store);
 
 ReactDOM.render(
   <Provider store={store}>
-    <AllTripsList />
     <NewTrip />
+    <AllTripsList />
   </Provider>
   , document.getElementById('root'));
 
