@@ -14,15 +14,20 @@ export class AllTripsList extends React.Component {
 
   render () {
     console.log(this.props);
-    let tripsList;
+    // let tripsList;
     // tripsListOptions = this.props.trips.map
-    tripsList = this.props.trips.map((trip, index) => <section key={index}>
+    const tripsList = this.props.trips.map(trip => <section key={trip.id}>
     <h3>{trip.name}</h3>
     <ul> <h5>Trip Options</h5>
       {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
     </ul>
-    <span>Trip Duration: {trip.duration} days </span>
-    <span>Where should {trip.name} go?</span>
+    <span>Trip Duration: {trip.duration} days</span>
+    <p>Where should {trip.name} go?</p>
+    {/* <span>Other VacationBrain users have already recommended:
+      <ul>
+      {trip.suggestedDestinations.map((option, index) => <li key={index}> {option} </li>)}
+      </ul>
+    </span> */}
     </section>);
 
     return <main>

@@ -3,7 +3,7 @@ import React from 'react';
 import {Field, reduxForm, reset} from 'redux-form';
 // import Multiselect from 'react-widgets/lib/Multiselect';
 
-import NewTripInput from './new-trip-input';
+import Input from './new-trip-input';
 import { addTrip, fetchTrips } from '../actions/trips';
 
 class NewTripForm extends React.Component {
@@ -20,7 +20,7 @@ class NewTripForm extends React.Component {
     return (
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
       <Field 
-            component={NewTripInput}
+            component={Input}
             element="input"
             label="Give your trip a name (optional)" 
             type="input" 
@@ -42,7 +42,7 @@ class NewTripForm extends React.Component {
         <option value="other">Other (give details below)</option>
         </Field>  */}
         <Field 
-            component={NewTripInput}
+            component={Input}
             element="input"
             label="How long is your trip (in days)?" 
             type="number" 
