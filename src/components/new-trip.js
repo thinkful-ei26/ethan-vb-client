@@ -11,9 +11,12 @@ class NewTripForm extends React.Component {
   onSubmit(value) {
     console.log(value);
     const newTrip = value;
+    console.log(this.props);
     this.props.dispatch(addTrip(newTrip));
-    this.props.dispatch(fetchTrips());
-    this.props.dispatch(reset('tripName'));
+      // .then(this.props.dispatch(fetchTrips()));
+    // this.props.dispatch(fetchTrips());
+    this.props.dispatch(reset('NewTrip'));
+    // this.props.dispatch(reset('duration'));
   }
 
   render(){

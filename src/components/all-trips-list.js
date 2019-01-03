@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
+
 import {fetchTrips} from '../actions/trips';
+import TripSuggestion from './trip-suggestion';
 
 export class AllTripsList extends React.Component {
   componentDidMount() {
@@ -13,7 +15,7 @@ export class AllTripsList extends React.Component {
   // }
 
   render () {
-    console.log(this.props);
+    // console.log(this.props);
     // let tripsList;
     // tripsListOptions = this.props.trips.map
     const tripsList = this.props.trips.map(trip => <section key={trip.id}>
@@ -23,11 +25,12 @@ export class AllTripsList extends React.Component {
     </ul>
     <span>Trip Duration: {trip.duration} days</span>
     <p>Where should {trip.name} go?</p>
-    {/* <span>Other VacationBrain users have already recommended:
+    <TripSuggestion form={trip.id} />
+    <span>Other VacationBrain users have already recommended:
       <ul>
-      {trip.suggestedDestinations.map((option, index) => <li key={index}> {option} </li>)}
+      {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
       </ul>
-    </span> */}
+    </span>
     </section>);
 
     return <main>

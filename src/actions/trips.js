@@ -30,7 +30,7 @@ export const addTripRequest = () => {
   }
 }
 
-export const ADD_TRIP_ERROR = 'ADD_TRIP';
+export const ADD_TRIP_ERROR = 'ADD_TRIP_ERROR';
 export const addTripError = (error) => {
   return {
     type: 'ADD_TRIP',
@@ -38,10 +38,33 @@ export const addTripError = (error) => {
   }
 }
 
-export const ADD_TRIP_SUCCESS = 'ADD_TRIP';
+export const ADD_TRIP_SUCCESS = 'ADD_TRIP_SUCCESS';
 export const addTripSuccess = (data) => {
   return {
     type: 'ADD_TRIP_SUCCESS',
+    data
+  }
+}
+
+export const ADD_SUGGESTION_REQUEST = 'ADD_SUGGESTION_REQUEST';
+export const addSuggestionRequest = () => {
+  return {
+    type: 'ADD_SUGGESTION_REQUEST',  
+  }
+}
+
+export const ADD_SUGGESTION_ERROR = 'ADD_SUGGESTION_ERROR';
+export const addSuggestionError = (error) => {
+  return {
+    type: 'ADD_SUGGESTION_ERROR',
+    error
+  }
+}
+
+export const ADD_SUGGESTION_SUCCESS = 'ADD_SUGGESTION_SUCCESS';
+export const addSuggestionSuccess = (data) => {
+  return {
+    type: 'ADD_SUGGESTION_SUCCESS',
     data
   }
 }
@@ -85,7 +108,7 @@ export const addTrip = (value) => {
   console.log(tripObj);
   return(dispatch) => {
     dispatch(addTripRequest());
-    fetch(`${API_BASE_URL}/trips`, 
+    return fetch(`${API_BASE_URL}/trips`, 
     {
       method: 'POST',
       body: JSON.stringify(tripObj),
@@ -96,7 +119,33 @@ export const addTrip = (value) => {
     })
       .then(res => res.json())
       .then(trips => dispatch(addTripSuccess(trips)))
-      .then(dispatch(fetchTrips()))
+      .then(() => dispatch(fetchTrips()))
+      // .then(dispatch(fetchTrips()))
+      .catch(err => dispatch(addTripError(err)))
+  }
+}
+
+export const addSuggestion = (value) => {
+  console.log(value)
+  const suggObj = {
+    "suggestion": value.suggestion,
+  };
+  console.log(suggObj);
+  return(dispatch) => {
+    dispatch(addSuggestionRequest());
+    return fetch(`${API_BASE_URL}/trips`, 
+    {
+      method: 'PUT',
+      body: JSON.stringify(suggObj),
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      }
+    })
+      .then(res => res.json())
+      .then(trips => dispatch(addSuggestionSuccess(trips)))
+      .then(() => dispatch(fetchTrips()))
+      // .then(dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
 }
