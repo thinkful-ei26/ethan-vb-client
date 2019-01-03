@@ -15,7 +15,7 @@ class TripSuggestion extends React.Component{
       suggestion: value,
       id: tripId
     }
-    // this.props.dispatch(addSuggestion(newSuggestion));
+    this.props.dispatch(addSuggestion(newSuggestion));
     this.props.dispatch(reset(tripId));
   }
   

@@ -4,7 +4,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 // import Multiselect from 'react-widgets/lib/Multiselect';
 
 import Input from './new-trip-input';
-import { addTrip, fetchTrips } from '../actions/trips';
+import { addTrip } from '../actions/trips';
 
 class NewTripForm extends React.Component {
 

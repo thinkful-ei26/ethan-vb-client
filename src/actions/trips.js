@@ -127,23 +127,21 @@ export const addTrip = (value) => {
 
 export const addSuggestion = (value) => {
   console.log(value)
-  const suggObj = {
-    "suggestion": value.suggestion,
-  };
+  const suggObj = value;
   console.log(suggObj);
   return(dispatch) => {
     dispatch(addSuggestionRequest());
-    return fetch(`${API_BASE_URL}/trips`, 
+    return fetch(`${API_BASE_URL}/trips/${suggObj.id}`, 
     {
       method: 'PUT',
-      body: JSON.stringify(suggObj),
+      body: JSON.stringify(suggObj.suggestion),
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
       }
     })
       .then(res => res.json())
-      .then(trips => dispatch(addSuggestionSuccess(trips)))
+      // .then(trips => dispatch(addSuggestionSuccess(trips)))
       .then(() => dispatch(fetchTrips()))
       // .then(dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
