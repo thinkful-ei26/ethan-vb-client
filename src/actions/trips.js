@@ -100,18 +100,63 @@ export const fetchTrips = () => {
 
 
 export const addTrip = (value) => {
-  console.log(value)
-  const tripObj = {
-    "name": value.tripName,
-    "duration": value.duration
-  };
-  console.log(tripObj);
+  // let selectedOptions = [];
+  // if (value.hiking){
+  //   selectedOptions.push('Hiking')
+  // }
+  // if(value.artArchitecture){
+  //   selectedOptions.push('Art + Architecture')
+  // }
+  // if(value.beaches){
+  //   selectedOptions.push('Beaches')
+  // }
+  // if(value.breweries){
+  //   selectedOptions.push('Breweries')
+  // }
+  // if(value.distilleries){
+  //   selectedOptions.push('Distilleries')
+  // }
+  // if(value.fineDining){
+  //   selectedOptions.push('Fine Dining')
+  // }
+  // if(value.gambling){
+  //   selectedOptions.push('Gambling')
+  // }
+  // if(value.liveMusic){
+  //   selectedOptions.push('Live Music')
+  // }
+  // if(value.museums){
+  //   selectedOptions.push('Museums')
+  // }
+  // if(value.partying){
+  //   selectedOptions.push('Partying')
+  // }
+  // if(value.shopping){
+  //   selectedOptions.push('Shopping')
+  // }
+  // if(value.skiingSnowboarding){
+  //   selectedOptions.push('Skiing + Snowboarding')
+  // }
+  // if(value.vineyards){
+  //   selectedOptions.push('Vineyards')
+  // }
+  // if(value.worldHistoricSites){
+  //   selectedOptions.push('World Historic Sites')
+  // }
+  console.log(value);
+  // console.log(selectedOptions);
+  // const tripObj = {
+  //   "name": value.tripName,
+  //   "duration": value.duration,
+  //   "selectedOptions": selectedOptions
+  // };
+  // console.log(tripObj);
   return(dispatch) => {
     dispatch(addTripRequest());
     return fetch(`${API_BASE_URL}/trips`, 
     {
       method: 'POST',
-      body: JSON.stringify(tripObj),
+      body: JSON.stringify(value),
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
@@ -126,15 +171,15 @@ export const addTrip = (value) => {
 }
 
 export const addSuggestion = (value) => {
-  console.log(value)
-  const suggObj = value;
-  console.log(suggObj);
+  // console.log(value)
+  // const suggObj = value;
+  // console.log(suggObj);
   return(dispatch) => {
     dispatch(addSuggestionRequest());
-    return fetch(`${API_BASE_URL}/trips/${suggObj.id}`, 
+    return fetch(`${API_BASE_URL}/trips/${value.id}`, 
     {
       method: 'PUT',
-      body: JSON.stringify(suggObj.suggestion),
+      body: JSON.stringify(value.suggestion),
       headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*'
