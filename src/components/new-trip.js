@@ -5,6 +5,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 
 import Input from './new-trip-input';
 import { addTrip } from '../actions/trips';
+import {required, notEmpty} from '../validators';
 
 class NewTripForm extends React.Component {
 
@@ -73,10 +74,10 @@ class NewTripForm extends React.Component {
       <Field 
             component={Input}
             element="input"
-            label="Give your trip a name (optional)" 
+            label="Give your trip a name" 
             type="input" 
-            name="name" 
-            // validate={[required, notEmpty, length]} 
+            name="name"
+            validate={[required, notEmpty]} 
       />
       <h5>What are you looking for in a vacation?</h5>
       <Field 
@@ -85,7 +86,6 @@ class NewTripForm extends React.Component {
             label="Art + Architecture" 
             type="checkbox" 
             name="artArchitecture" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -93,7 +93,6 @@ class NewTripForm extends React.Component {
             label="World Historic Sites" 
             type="checkbox" 
             name="worldHistoricSites" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -101,7 +100,6 @@ class NewTripForm extends React.Component {
             label="Museums" 
             type="checkbox" 
             name="museums" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -109,7 +107,6 @@ class NewTripForm extends React.Component {
             label="Fine Dining" 
             type="checkbox" 
             name="fineDining" 
-            // validate={[required, notEmpty, length]} 
       />
        <Field 
             component={Input}
@@ -117,7 +114,6 @@ class NewTripForm extends React.Component {
             label="Shopping" 
             type="checkbox" 
             name="shopping" 
-            // validate={[required, notEmpty, length]} 
       />
        <Field 
             component={Input}
@@ -125,7 +121,6 @@ class NewTripForm extends React.Component {
             label="Beaches" 
             type="checkbox" 
             name="beaches" 
-            // validate={[required, notEmpty, length]} 
       />
        <Field 
             component={Input}
@@ -133,7 +128,6 @@ class NewTripForm extends React.Component {
             label="Skiing/Snowboarding" 
             type="checkbox" 
             name="skiingSnowboarding" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -141,7 +135,6 @@ class NewTripForm extends React.Component {
             label="Hiking" 
             type="checkbox" 
             name="hiking" 
-            // validate={[required, notEmpty, length]} 
       />
        <Field 
             component={Input}
@@ -149,7 +142,6 @@ class NewTripForm extends React.Component {
             label="Partying" 
             type="checkbox" 
             name="partying" 
-            // validate={[required, notEmpty, length]} 
       />
        <Field 
             component={Input}
@@ -157,7 +149,6 @@ class NewTripForm extends React.Component {
             label="Live Music" 
             type="checkbox" 
             name="liveMusic" 
-            // validate={[required, notEmpty, length]} 
       />
      
       <Field 
@@ -166,7 +157,6 @@ class NewTripForm extends React.Component {
             label="Breweries" 
             type="checkbox" 
             name="breweries" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -174,7 +164,6 @@ class NewTripForm extends React.Component {
             label="Distilleries" 
             type="checkbox" 
             name="distilleries" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -182,7 +171,6 @@ class NewTripForm extends React.Component {
             label="Vineyards" 
             type="checkbox" 
             name="vineyards" 
-            // validate={[required, notEmpty, length]} 
       />
       <Field 
             component={Input}
@@ -190,29 +178,14 @@ class NewTripForm extends React.Component {
             label="Gambling" 
             type="checkbox" 
             name="gambling" 
-            // validate={[required, notEmpty, length]} 
       />
-      {/* <Field 
-            component={NewTripInput}
-            element="input"
-            label="What do you want to do on your trip?" 
-            type="checkbox"
-            name="selectedOptions" 
-            // validate={[required, notEmpty, length]} 
-      >
-        <option value="not-delivered">My delivery hasn't arrived</option>
-        <option value="wrong-item">The wrong item was delivered</option>
-        <option value="missing-part">Part of my order was missing</option>
-        <option value="damaged">Some of my order arrived damaged</option>
-        <option value="other">Other (give details below)</option>
-        </Field>  */}
       <Field 
           component={Input}
           element="input"
           label="How long is your trip (in days)?" 
           type="number" 
           name="duration" 
-          // validate={[required, notEmpty, length]} 
+          validate={[required, notEmpty]} 
       />
       <button type="submit">Add your trip!</button>
     </form>

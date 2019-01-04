@@ -4,6 +4,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 
 import Input from './new-trip-input';
 import { addSuggestion } from '../actions/trips';
+import {required} from '../validators';
 
 class TripSuggestion extends React.Component{
   
@@ -30,7 +31,7 @@ class TripSuggestion extends React.Component{
             label="Your suggestion:" 
             type="input"
             name="suggestion" 
-            // validate={[required, notEmpty, length]} 
+            validate={required} 
       />
       <button type="submit">Add!</button>
     </form>
