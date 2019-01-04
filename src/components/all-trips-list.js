@@ -36,20 +36,20 @@ export class AllTripsList extends React.Component {
       <span>Trip Duration: {trip.duration} days</span>
       <p>Where should {trip.name} go?</p>
       <TripSuggestion form={trip.id} />
-      <p>
-        {/* {tripsSuggested} */}
-        <span>Other VacationBrain users have already recommended:
+      {trip.suggestions.length > 0 &&
+      <span>Other VacationBrain users have already recommended:
         <ul>
-        {this.props.trips.trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
+        {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
         </ul>
       </span>
-      </p>
+      }
     </section>);
 
-    return <main>
-    {tripsList}
-  </main>
-  }
+    return (
+      <main>
+        {tripsList}
+      </main>
+    )}
 }
 
 const mapStateToProps = state => {

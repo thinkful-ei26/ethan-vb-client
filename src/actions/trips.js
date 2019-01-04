@@ -118,7 +118,7 @@ export const addTrip = (value) => {
       }
     })
       .then(res => res.json())
-      .then(trips => dispatch(addTripSuccess(trips)))
+      // .then(trips => dispatch(addTripSuccess(trips)))
       .then(() => dispatch(fetchTrips()))
       // .then(dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))

@@ -3,7 +3,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 // import {connect} from 'react-redux'
 
 import Input from './new-trip-input';
-import { addTrip, fetchTrips, addSuggestion } from '../actions/trips';
+import { addSuggestion } from '../actions/trips';
 
 class TripSuggestion extends React.Component{
   
