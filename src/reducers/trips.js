@@ -1,9 +1,10 @@
-import {FETCH_TRIPS_REQUEST, FETCH_TRIPS_SUCCESS, FETCH_TRIPS_ERROR, ADD_TRIP_ERROR, ADD_TRIP_REQUEST, ADD_TRIP_SUCCESS, ADD_SUGGESTION_REQUEST, ADD_SUGGESTION_ERROR, ADD_SUGGESTION_SUCCESS} from '../actions/trips';
+import {CLOSE_MODAL, FETCH_TRIPS_REQUEST, FETCH_TRIPS_SUCCESS, FETCH_TRIPS_ERROR, ADD_TRIP_ERROR, ADD_TRIP_REQUEST, ADD_TRIP_SUCCESS, ADD_SUGGESTION_REQUEST, ADD_SUGGESTION_ERROR, ADD_SUGGESTION_SUCCESS} from '../actions/trips';
 
 const initialState = {
   trips: [],
   loading: false,
-  error: null
+  error: null,
+  modal: true
 };
 
 export const tripsReducer = (state=initialState, action) => {
@@ -49,6 +50,11 @@ export const tripsReducer = (state=initialState, action) => {
       loading: false,
       trips: action.data
     })
+  } else if (action.type === CLOSE_MODAL){
+    return Object.assign({}, state, {
+      modal: false
+    })
   }
+
   return state
 }

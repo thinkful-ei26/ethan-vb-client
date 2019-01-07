@@ -4,10 +4,11 @@ import {connect} from 'react-redux';
 import {fetchTrips} from '../actions/trips';
 import TripSuggestion from './trip-suggestion';
 
+import './all-trips-list.css';
+
 export class AllTripsList extends React.Component {
   componentDidMount() {
     this.props.dispatch(fetchTrips());
-
   }
 
   // componentDidUpdate() {
@@ -33,30 +34,33 @@ export class AllTripsList extends React.Component {
         <h5>Trip Options</h5>
         {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
       </ul>
-      <span>Trip Duration: {trip.duration} days</span>
+      <p>Trip Duration: {trip.duration} days</p>
       <p>Where should {trip.name} go?</p>
       <TripSuggestion form={trip.id} />
       {trip.suggestions.length > 0 &&
-      <span>Other VacationBrain users have already recommended:
+      <p>Other VacationBrain users have already recommended:
         <ul>
         {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
         </ul>
-      </span>
+      </p>
       }
     </section>);
-
-    return (
-      <main>
-        {tripsList}
-      </main>
-    )}
+    if(!this.props.modal){
+      return (
+        <main>
+          {tripsList}
+        </main>
+      )
+    } else return null
+  }
 }
 
 const mapStateToProps = state => {
   return {
-  trips: state.tripsReducer.trips,
-  error: state.tripsReducer.error,
-  state
+    trips: state.tripsReducer.trips,
+    error: state.tripsReducer.error,
+    modal: state.tripsReducer.modal,
+    state,
   }
 }
 

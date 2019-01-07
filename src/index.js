@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+
+import * as serviceWorker from './serviceWorker';
+
 import './index.css';
+import store from './store';
 // import App from './App';
 import AllTripsList from './components/all-trips-list';
 import NewTrip from './components/new-trip';
-import * as serviceWorker from './serviceWorker';
-import {Provider} from 'react-redux';
-import store from './store';
+import InfoModal from './components/info-modal'
+
 
 // ReactDOM.render(<AllTripsList trips = {[
 //   {
@@ -31,6 +35,7 @@ import store from './store';
 
 ReactDOM.render(
   <Provider store={store}>
+    <InfoModal />
     <NewTrip />
     <AllTripsList />
   </Provider>

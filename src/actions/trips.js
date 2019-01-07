@@ -69,23 +69,13 @@ export const addSuggestionSuccess = (data) => {
   }
 }
 
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const closeModal = () => {
+  return {
+    type: 'CLOSE_MODAL'
+  }
+}
 
-// export const fetchTrips = () => {
-//   return(dispatch) => {
-//     dispatch(fetchTripsRequest());
-//     console.log(`${API_BASE_URL}/trips`);
-//     fetch(`${API_BASE_URL}/trips`)
-//       .then(res => {
-//         // console.log(res.json());
-//         res.json();
-//       })
-//       .then(trips => {
-//         // console.log(trips.body);
-//         dispatch(fetchTripsSuccess(trips.trips))
-//       })
-//       .catch(err => dispatch(fetchTripsError(err)))
-//   }
-// }
 
 export const fetchTrips = () => {
   return(dispatch) => {
@@ -100,57 +90,7 @@ export const fetchTrips = () => {
 
 
 export const addTrip = (value) => {
-  // let selectedOptions = [];
-  // if (value.hiking){
-  //   selectedOptions.push('Hiking')
-  // }
-  // if(value.artArchitecture){
-  //   selectedOptions.push('Art + Architecture')
-  // }
-  // if(value.beaches){
-  //   selectedOptions.push('Beaches')
-  // }
-  // if(value.breweries){
-  //   selectedOptions.push('Breweries')
-  // }
-  // if(value.distilleries){
-  //   selectedOptions.push('Distilleries')
-  // }
-  // if(value.fineDining){
-  //   selectedOptions.push('Fine Dining')
-  // }
-  // if(value.gambling){
-  //   selectedOptions.push('Gambling')
-  // }
-  // if(value.liveMusic){
-  //   selectedOptions.push('Live Music')
-  // }
-  // if(value.museums){
-  //   selectedOptions.push('Museums')
-  // }
-  // if(value.partying){
-  //   selectedOptions.push('Partying')
-  // }
-  // if(value.shopping){
-  //   selectedOptions.push('Shopping')
-  // }
-  // if(value.skiingSnowboarding){
-  //   selectedOptions.push('Skiing + Snowboarding')
-  // }
-  // if(value.vineyards){
-  //   selectedOptions.push('Vineyards')
-  // }
-  // if(value.worldHistoricSites){
-  //   selectedOptions.push('World Historic Sites')
-  // }
   console.log(value);
-  // console.log(selectedOptions);
-  // const tripObj = {
-  //   "name": value.tripName,
-  //   "duration": value.duration,
-  //   "selectedOptions": selectedOptions
-  // };
-  // console.log(tripObj);
   return(dispatch) => {
     dispatch(addTripRequest());
     return fetch(`${API_BASE_URL}/trips`, 
@@ -163,17 +103,12 @@ export const addTrip = (value) => {
       }
     })
       .then(res => res.json())
-      // .then(trips => dispatch(addTripSuccess(trips)))
       .then(() => dispatch(fetchTrips()))
-      // .then(dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
 }
 
 export const addSuggestion = (value) => {
-  // console.log(value)
-  // const suggObj = value;
-  // console.log(suggObj);
   return(dispatch) => {
     dispatch(addSuggestionRequest());
     return fetch(`${API_BASE_URL}/trips/${value.id}`, 
@@ -186,9 +121,7 @@ export const addSuggestion = (value) => {
       }
     })
       .then(res => res.json())
-      // .then(trips => dispatch(addSuggestionSuccess(trips)))
       .then(() => dispatch(fetchTrips()))
-      // .then(dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
 }

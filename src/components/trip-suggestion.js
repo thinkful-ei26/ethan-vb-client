@@ -3,7 +3,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 // import {connect} from 'react-redux'
 
 import Input from './new-trip-input';
-import { addSuggestion } from '../actions/trips';
+import {addSuggestion} from '../actions/trips';
 import {required} from '../validators';
 
 class TripSuggestion extends React.Component{
@@ -11,7 +11,7 @@ class TripSuggestion extends React.Component{
   onSubmit(value) {
     console.log(value);
     console.log(this.props.form);
-    let tripId = this.props.form;
+    const tripId = this.props.form;
     const newSuggestion = {
       suggestion: value,
       id: tripId
@@ -39,15 +39,6 @@ class TripSuggestion extends React.Component{
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//   trips: state.tripsReducer.trips,
-//   error: state.tripsReducer.error,
-//   state
-//   }
-// }
-
 export default reduxForm({
   // form: 'Suggestion'
 })(TripSuggestion)
-// (mapStateToProps)

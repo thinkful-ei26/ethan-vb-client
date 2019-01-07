@@ -4,7 +4,7 @@ import {Field, reduxForm, reset} from 'redux-form';
 // import Multiselect from 'react-widgets/lib/Multiselect';
 
 import Input from './new-trip-input';
-import { addTrip } from '../actions/trips';
+import {addTrip} from '../actions/trips';
 import {required, notEmpty} from '../validators';
 
 class NewTripForm extends React.Component {
@@ -63,12 +63,12 @@ class NewTripForm extends React.Component {
     }
     this.props.dispatch(addTrip(newTrip));
       // .then(this.props.dispatch(fetchTrips()));
-    // this.props.dispatch(fetchTrips());
     this.props.dispatch(reset('NewTrip'));
-    // this.props.dispatch(reset('duration'));
   }
 
   render(){
+    console.log(this.props);
+    // if (!this.props.modal){
     return (
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
       <Field 
