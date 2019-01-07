@@ -7,7 +7,7 @@ import {closeModal} from '../actions/trips';
 export class InfoModal extends React.Component{
   render (){
     console.log(this.props);
-    if (this.props.modal){
+    // if (this.props.modal){
       return (
         <div className="overlay" id="modal">
             <h3>Welcome to VacationBrain! Here's how it works:</h3>
@@ -27,14 +27,14 @@ export class InfoModal extends React.Component{
             </section>
         </div>
         )
-      } else return null
-    }
+      }
+    // }
 }
 
-const mapStateToProps = state => {
-  return {
-    modal: state.tripsReducer.modal
-  }
-}
+// const mapStateToProps = state => {
+//   return {
+//     modal: state.tripsReducer.modal
+//   }
+// }
 
-export default connect(mapStateToProps)(InfoModal)
+export default connect()(InfoModal)

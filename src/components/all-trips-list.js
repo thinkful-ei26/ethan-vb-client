@@ -38,11 +38,11 @@ export class AllTripsList extends React.Component {
       <p>Where should {trip.name} go?</p>
       <TripSuggestion form={trip.id} />
       {trip.suggestions.length > 0 &&
-      <p>Other VacationBrain users have already recommended:
+      <h6>Other VacationBrain users have already recommended:
         <ul>
         {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
         </ul>
-      </p>
+      </h6>
       }
     </section>);
     if(!this.props.modal){

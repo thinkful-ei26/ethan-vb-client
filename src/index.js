@@ -6,10 +6,10 @@ import * as serviceWorker from './serviceWorker';
 
 import './index.css';
 import store from './store';
-// import App from './App';
-import AllTripsList from './components/all-trips-list';
-import NewTrip from './components/new-trip';
-import InfoModal from './components/info-modal'
+import App from './components/app';
+// import AllTripsList from './components/all-trips-list';
+// import NewTrip from './components/new-trip';
+// import InfoModal from './components/info-modal'
 
 
 // ReactDOM.render(<AllTripsList trips = {[
@@ -35,9 +35,10 @@ import InfoModal from './components/info-modal'
 
 ReactDOM.render(
   <Provider store={store}>
-    <InfoModal />
+    {/* <InfoModal />
     <NewTrip />
-    <AllTripsList />
+    <AllTripsList /> */}
+    <App />
   </Provider>
   , document.getElementById('root'));
 
