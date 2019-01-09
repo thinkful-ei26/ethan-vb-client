@@ -1,11 +1,11 @@
 import React from 'react';
 import {shallow, mount, render} from 'enzyme';
 
-import AllTripsList from '../components/all-trips-list';
+import {AllTripsList} from '../components/all-trips-list';
 
 describe('<AllTripsList />', () => {
   it('should render a component', () =>{
-    shallow(<AllTripsList />);
+    shallow(<AllTripsList trips={[]} dispatch={()=>{}} />);
     // console.log(shallow(<App />));
   });
   it('should render the correct properties of an object', () => {
@@ -23,13 +23,14 @@ describe('<AllTripsList />', () => {
       duration: 2,
       suggestions: ['san diego', 'cuba']
     }];
-    const wrapper = shallow(<AllTripsList />);
-    wrapper.setState({objects});
-    // console.log(wrapper);
+    const wrapper = shallow(<AllTripsList dispatch={()=>{}} trips={objects} />);
+    // wrapper.setState({objects});
+    console.log(wrapper);
     const items = wrapper.find('.trip-object');
+    // expect(wrapper.find('.trip-object')).to.exist();
     console.log(items);
     console.log(items.length);
     console.log(objects.length);
-    // expect(item.length).toEqual(objects.length);
+    expect(items.length).toEqual(objects.length);
   })
 });

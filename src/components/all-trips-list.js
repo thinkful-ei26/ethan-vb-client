@@ -39,7 +39,6 @@ export class AllTripsList extends React.Component {
             </ul>
           </div>
           <p>Trip Length: <strong>{trip.duration}</strong> days</p>
-          
           {trip.suggestions.length > 0 &&
           <div className="trip-recommendations">
             <h5>Other VacationBrain users have already recommended:</h5>
