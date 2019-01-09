@@ -1,3 +1,52 @@
 * {
   color: black
 }
+
+/* section {
+  text-align: center
+} */
+
+.trip-content h3 {
+ text-align: center
+}
+
+/* .trip-content {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center
+} */
+
+.trip-content h5 {
+  padding: 0px;
+  margin-top: 5px; 
+  margin-bottom: 5px
+}
+
+.trip-options {
+  margin: 0 auto;
+  width: 250px;
+  border: 1px green dashed;
+  padding: 5px;
+}
+
+.trip-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 2px
+}
+
+.trip-content > p {
+  margin: 0 auto;
+  width: 250px;
+  padding: 5px
+}
+
+.trip-suggestion {
+  margin: 0 auto;
+  width: 250px;
+}
+
+.trip-recommendations {
+  margin: 0 auto;
+  width: 250px;
+}

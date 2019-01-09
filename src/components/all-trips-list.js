@@ -28,31 +28,35 @@ export class AllTripsList extends React.Component {
     // }
     // let tripsList;
     // tripsListOptions = this.props.trips.map
-    const tripsList = this.props.trips.map(trip => <section key={trip.id}>
-      <h3>{trip.name}</h3>
-      <ul> 
-        <h5>Trip Options</h5>
-        {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
-      </ul>
-      <p>Trip Duration: {trip.duration} days</p>
-      <p>Where should {trip.name} go?</p>
-      <TripSuggestion form={trip.id} />
-      {trip.suggestions.length > 0 &&
-      <div>
-        <h5>Other VacationBrain users have already recommended:</h5>
-        <ul>
-        {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
-        </ul>
-      </div>
-      }
-    </section>);
-    if(!this.props.modal){
-      return (
-        <main>
-          {tripsList}
-        </main>
-      )
-    } else return null
+    const tripsList = this.props.trips.map(trip => 
+      <section key={trip.id}>
+        <div className="trip-content">
+          <h3>{trip.name}</h3>
+          <div className="trip-options">
+            <h5>Trip Options</h5>
+            <ul> 
+              {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
+            </ul>
+          </div>
+          <p>Trip Length: <strong>{trip.duration}</strong> days</p>
+          
+          {trip.suggestions.length > 0 &&
+          <div className="trip-recommendations">
+            <h5>Other VacationBrain users have already recommended:</h5>
+            <ul>
+              {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
+            </ul>
+          </div>
+          }
+          <p>Where should {trip.name} go?</p>
+          <div className="trip-suggestion"><TripSuggestion form={trip.id} /></div>
+        </div>
+      </section>);
+    return (
+      <main>
+        {tripsList}
+      </main>
+    )
   }
 }
 

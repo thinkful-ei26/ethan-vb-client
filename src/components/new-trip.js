@@ -7,6 +7,8 @@ import Input from './new-trip-input';
 import {addTrip} from '../actions/trips';
 import {required, notEmpty} from '../validators';
 
+import './new-trip.css';
+
 class NewTripForm extends React.Component {
 
   onSubmit(value) {
@@ -70,6 +72,7 @@ class NewTripForm extends React.Component {
     console.log(this.props);
     // if (!this.props.modal){
     return (
+    <div className="form-container">
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
       <Field 
             component={Input}
@@ -79,7 +82,8 @@ class NewTripForm extends React.Component {
             name="name"
             validate={[required, notEmpty]} 
       />
-      <h5>What are you looking for in a vacation?</h5>
+      <h3>What are you looking for in a vacation?</h3>
+      <p>Select as many as you want</p>
       <Field 
             component={Input}
             element="input"
@@ -189,6 +193,7 @@ class NewTripForm extends React.Component {
       />
       <button type="submit">Add your trip!</button>
     </form>
+    </div>
     )}
 }
 

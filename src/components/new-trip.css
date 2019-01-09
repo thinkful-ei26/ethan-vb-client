@@ -1,0 +1,14 @@
+form {
+  margin: 0 auto;
+  /* text-align: center; */
+  width: 250px;
+  padding: 5px;
+}
+
+button{
+  font-weight: bold
+}
+
+.trip-option {
+  padding-bottom: 5px
+}

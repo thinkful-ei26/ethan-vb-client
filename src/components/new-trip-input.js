@@ -18,7 +18,7 @@ export default class Input extends React.Component{
     }
 
     return(
-      <div>
+      <div className="trip-option">
          <label htmlFor={this.props.input.name}>
             {this.props.label}
             {error}
