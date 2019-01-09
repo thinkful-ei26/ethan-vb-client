@@ -5,7 +5,7 @@ import InfoModal from './info-modal';
 import AllTripsList from './all-trips-list';
 import NewTrip from './new-trip';
 
-export  class App extends React.Component {
+export class App extends React.Component {
   render(){
     console.log(this.props);
     if (this.props.modal){

@@ -29,7 +29,7 @@ export class AllTripsList extends React.Component {
     // let tripsList;
     // tripsListOptions = this.props.trips.map
     const tripsList = this.props.trips.map(trip => 
-      <section key={trip.id}>
+      <section className="trip-object" key={trip.id}>
         <div className="trip-content">
           <h3>{trip.name}</h3>
           <div className="trip-options">
@@ -63,8 +63,8 @@ export class AllTripsList extends React.Component {
 const mapStateToProps = state => {
   return {
     trips: state.tripsReducer.trips,
-    error: state.tripsReducer.error,
-    modal: state.tripsReducer.modal,
+    // error: state.tripsReducer.error,
+    // modal: state.tripsReducer.modal,
     state,
   }
 }
