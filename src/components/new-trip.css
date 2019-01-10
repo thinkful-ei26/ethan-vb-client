@@ -77,12 +77,6 @@ button {
   width: 80px;
 }
 
-
-
-
-
-/* .name-container {
-  width: 252px;
-  height: 40px;
-  
-} */
+input[type=checkbox]:checked + label {
+  color: #f00;
+} 

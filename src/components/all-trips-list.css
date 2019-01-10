@@ -30,7 +30,7 @@ h2, h4, h5 {
 } */
 
 .trip-content {
-  padding-bottom: 15px 
+  padding-bottom: 25px 
 }
 
 .trip-content h4 {
@@ -55,7 +55,7 @@ h2, h4, h5 {
   margin: 0 auto;
   width: 450px;
   /* border: 1px green dashed; */
-  padding: 5px;
+  padding-top: 2px;
 }
 
 .trip-content ul {
@@ -78,4 +78,8 @@ h2, h4, h5 {
 .trip-recommendations {
   margin: 0 auto;
   width: 450px;
+}
+
+.trip-recommendation-container {
+  padding-top: 10px
 }
