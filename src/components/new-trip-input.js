@@ -1,6 +1,8 @@
 import React from 'react';
 // import Multiselect from 'react-widgets/lib/Multiselect';
 
+import './new-trip-input.css'
+
 export default class Input extends React.Component{
   render(){
     // console.log(this.props.children);
@@ -19,18 +21,21 @@ export default class Input extends React.Component{
 
     return(
       <div className="trip-option">
-         <label htmlFor={this.props.input.name}>
-            {this.props.label}
-            {error}
-            {warning}
-         </label>
+        <label htmlFor={this.props.input.name}>
+          {this.props.label}
+          {error}
+          {warning}
+        </label>
+        <div className={this.props.type}>
          <Element
             {...this.props.input}
             id={this.props.input.name}
             type={this.props.type}
+            placeholder={this.props.placeholder}
             ref={input => this.input = input}>
             {this.props.children}
           </Element>
+        </div>
       </div>
 
 

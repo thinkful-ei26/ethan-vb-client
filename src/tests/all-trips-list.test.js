@@ -10,14 +10,14 @@ describe('<AllTripsList />', () => {
   });
   it('should render the correct properties of an object', () => {
     const objects = [{
-      _id: '111111111111111111111101',
+      id: '111111111111111111111101',
       name: 'tom',
       selectedOptions: ['skiing', 'breweries'],
       duration: 9,
       suggestions: ['denver']
     },
     {
-      _id: '111111111111111111111102',
+      id: '111111111111111111111102',
       name: 'frank',
       selectedOptions: ['beaches'],
       duration: 2,
@@ -25,10 +25,10 @@ describe('<AllTripsList />', () => {
     }];
     const wrapper = shallow(<AllTripsList dispatch={()=>{}} trips={objects} />);
     // wrapper.setState({objects});
-    console.log(wrapper);
+    // console.log(wrapper);
     const items = wrapper.find('.trip-object');
     // expect(wrapper.find('.trip-object')).to.exist();
-    console.log(items);
+    // console.log(items);
     console.log(items.length);
     console.log(objects.length);
     expect(items.length).toEqual(objects.length);

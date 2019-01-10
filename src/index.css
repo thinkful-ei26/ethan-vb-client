@@ -6,6 +6,9 @@ body {
     sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(to top, #cfe0e5, #82bdc7);
+  background-repeat: no-repeat;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 code {
@@ -13,7 +16,6 @@ code {
     monospace;
 }
 
-* {
-  font-family: 'Source Sans Pro', sans-serif;
-}
-
+/* html {
+  background-image: linear-gradient(to top, #cfe0e5, #82bdc7);
+} */

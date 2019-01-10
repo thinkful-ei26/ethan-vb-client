@@ -11,6 +11,7 @@ export class AllTripsList extends React.Component {
     this.props.dispatch(fetchTrips());
   }
 
+  
   // componentDidUpdate() {
   //   this.props.dispatch(fetchTrips());
   // }
@@ -31,28 +32,30 @@ export class AllTripsList extends React.Component {
     const tripsList = this.props.trips.map(trip => 
       <section className="trip-object" key={trip.id}>
         <div className="trip-content">
-          <h3>{trip.name}</h3>
           <div className="trip-options">
-            <h5>Trip Options</h5>
+            <h3>{trip.name}'s Desired Options are</h3>
             <ul> 
               {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
             </ul>
           </div>
           <p>Trip Length: <strong>{trip.duration}</strong> days</p>
-          {trip.suggestions.length > 0 &&
-          <div className="trip-recommendations">
-            <h5>Other VacationBrain users have already recommended:</h5>
-            <ul>
-              {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
-            </ul>
+          <div className="trip-recommendation-container">
+            <h4>Where should {trip.name} go?</h4>
+            {trip.suggestions.length > 0 &&
+            <div className="trip-recommendations">
+              <h5>Other VacationBrain users have already recommended:</h5>
+              <ul>
+                {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
+              </ul>
+            </div>
+            }
+            <div className="trip-suggestion"><TripSuggestion form={trip.id} /></div>
           </div>
-          }
-          <p>Where should {trip.name} go?</p>
-          <div className="trip-suggestion"><TripSuggestion form={trip.id} /></div>
         </div>
       </section>);
     return (
       <main>
+        <h2>Trips From Other Users:</h2>
         {tripsList}
       </main>
     )

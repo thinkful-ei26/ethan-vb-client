@@ -2,6 +2,8 @@ import React from 'react';
 
 import {connect} from 'react-redux';
 
+import './info-modal.css'
+
 import {closeModal} from '../actions/trips';
 
 export class InfoModal extends React.Component{

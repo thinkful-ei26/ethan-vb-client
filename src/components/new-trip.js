@@ -9,7 +9,7 @@ import {required, notEmpty} from '../validators';
 
 import './new-trip.css';
 
-class NewTripForm extends React.Component {
+export class NewTripForm extends React.Component {
 
   onSubmit(value) {
     console.log(value);
@@ -74,122 +74,124 @@ class NewTripForm extends React.Component {
     return (
     <div className="form-container">
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-      <Field 
-            component={Input}
-            element="input"
-            label="Give your trip a name" 
-            type="input" 
-            name="name"
-            validate={[required, notEmpty]} 
-      />
-      <h3>What are you looking for in a vacation?</h3>
+      <h2>What are you looking for in a vacation?</h2>
       <p>Select as many as you want</p>
       <Field 
-            component={Input}
-            element="input"
-            label="Art + Architecture" 
-            type="checkbox" 
-            name="artArchitecture" 
+        component={Input}
+        element="input"
+        label="Art + Architecture" 
+        type="checkbox" 
+        name="artArchitecture" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="World Historic Sites" 
-            type="checkbox" 
-            name="worldHistoricSites" 
+        component={Input}
+        element="input"
+        label="World Historic Sites" 
+        type="checkbox" 
+        name="worldHistoricSites" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="Museums" 
-            type="checkbox" 
-            name="museums" 
+        component={Input}
+        element="input"
+        label="Museums" 
+        type="checkbox" 
+        name="museums" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="Fine Dining" 
-            type="checkbox" 
-            name="fineDining" 
+        component={Input}
+        element="input"
+        label="Fine Dining" 
+        type="checkbox" 
+        name="fineDining" 
       />
        <Field 
-            component={Input}
-            element="input"
-            label="Shopping" 
-            type="checkbox" 
-            name="shopping" 
+        component={Input}
+        element="input"
+        label="Shopping" 
+        type="checkbox" 
+        name="shopping" 
       />
        <Field 
-            component={Input}
-            element="input"
-            label="Beaches" 
-            type="checkbox" 
-            name="beaches" 
+        component={Input}
+        element="input"
+        label="Beaches" 
+        type="checkbox" 
+        name="beaches" 
       />
        <Field 
-            component={Input}
-            element="input"
-            label="Skiing/Snowboarding" 
-            type="checkbox" 
-            name="skiingSnowboarding" 
+        component={Input}
+        element="input"
+        label="Skiing/Snowboarding" 
+        type="checkbox" 
+        name="skiingSnowboarding" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="Hiking" 
-            type="checkbox" 
-            name="hiking" 
+        component={Input}
+        element="input"
+        label="Hiking" 
+        type="checkbox" 
+        name="hiking" 
       />
        <Field 
-            component={Input}
-            element="input"
-            label="Partying" 
-            type="checkbox" 
-            name="partying" 
+        component={Input}
+        element="input"
+        label="Partying" 
+        type="checkbox" 
+        name="partying" 
       />
        <Field 
-            component={Input}
-            element="input"
-            label="Live Music" 
-            type="checkbox" 
-            name="liveMusic" 
+        component={Input}
+        element="input"
+        label="Live Music" 
+        type="checkbox" 
+        name="liveMusic" 
       />
      
       <Field 
-            component={Input}
-            element="input"
-            label="Breweries" 
-            type="checkbox" 
-            name="breweries" 
+        component={Input}
+        element="input"
+        label="Breweries" 
+        type="checkbox" 
+        name="breweries" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="Distilleries" 
-            type="checkbox" 
-            name="distilleries" 
+        component={Input}
+        element="input"
+        label="Distilleries" 
+        type="checkbox" 
+        name="distilleries" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="Vineyards" 
-            type="checkbox" 
-            name="vineyards" 
+        component={Input}
+        element="input"
+        label="Vineyards" 
+        type="checkbox" 
+        name="vineyards" 
       />
       <Field 
-            component={Input}
-            element="input"
-            label="Gambling" 
-            type="checkbox" 
-            name="gambling" 
+        component={Input}
+        element="input"
+        label="Gambling" 
+        type="checkbox" 
+        name="gambling" 
       />
       <Field 
-          component={Input}
-          element="input"
-          label="How long is your trip (in days)?" 
-          type="number" 
-          name="duration" 
-          validate={[required, notEmpty]} 
+        component={Input}
+        element="input"
+        label="Give your trip a name" 
+        type="text" 
+        name="name"
+        placeholder="Sunny vacation!"
+        validate={[required, notEmpty]} 
+      />
+      <Field 
+        component={Input}
+        element="input"
+        label="How long is your trip (in days)?" 
+        type="number" 
+        name="duration" 
+        placeholder="9"
+        validate={[required, notEmpty]} 
       />
       <button type="submit">Add your trip!</button>
     </form>

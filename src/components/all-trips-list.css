@@ -6,17 +6,46 @@
   text-align: center
 } */
 
-.trip-content h3 {
- text-align: center
-}
-
 /* .trip-content {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center
+  margin-top: 25px;
+  border: 1px green dashed;
+  width: 450px;
+  margin: 0 auto;
 } */
 
+.trip-content h3 {
+  margin: 0 auto;
+  width: 450px;
+  padding-top: 18px
+}
+
+h2, h4, h5 {
+  margin: 0 auto;
+  width: 450px;
+}
+
+/* h5 {
+  margin: 0 auto;
+  width: 450px;
+} */
+
+.trip-content {
+  padding-bottom: 15px 
+}
+
+.trip-content h4 {
+  padding-top: 15px;
+  margin-top: 0px; 
+  margin-bottom: 0px;
+}
+
 .trip-content h5 {
+  padding-top: 5px;
+  margin-top: 0px; 
+  margin-bottom: 0px;
+}
+
+.trip-content p {
   padding: 0px;
   margin-top: 5px; 
   margin-bottom: 5px
@@ -24,8 +53,8 @@
 
 .trip-options {
   margin: 0 auto;
-  width: 250px;
-  border: 1px green dashed;
+  width: 450px;
+  /* border: 1px green dashed; */
   padding: 5px;
 }
 
@@ -35,18 +64,18 @@
   margin: 2px
 }
 
-.trip-content > p {
+.trip-content p {
   margin: 0 auto;
-  width: 250px;
-  padding: 5px
+  width: 450px;
+  padding: 0px
 }
 
 .trip-suggestion {
   margin: 0 auto;
-  width: 250px;
+  width: 450px;
 }
 
 .trip-recommendations {
   margin: 0 auto;
-  width: 250px;
+  width: 450px;
 }

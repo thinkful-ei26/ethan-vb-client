@@ -1,7 +1,7 @@
 form {
   margin: 0 auto;
   /* text-align: center; */
-  width: 250px;
+  width: 450px;
   padding: 5px;
 }
 
@@ -9,6 +9,80 @@ button{
   font-weight: bold
 }
 
+.form-container {
+  margin-bottom: 25px
+}
+
 .trip-option {
   padding-bottom: 5px
 }
+
+.form-container h3 {
+  margin-bottom: 0px;
+  padding-bottom: 0px
+}
+
+.form-container p {
+  margin-top: 0px;
+  padding-top: 0px;
+  font-style: italic
+}
+
+.checkbox {
+  display: inline
+}
+
+#name, #duration, #suggestion{
+    width: 190px;
+    height: 20px;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0.3px;
+    border-radius: 20px;
+    background-color: #d9e4e8;
+}
+
+/* #name::before, #duration::before {
+  content: "\A";
+} */
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+button {
+  width: 140px;
+  height: 28px;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+  font-size: 16px;
+  font-weight: normal;
+  /* font-style: normal;
+  font-stretch: normal; */
+  /* line-height: normal;
+  letter-spacing: 0.2px; */
+  /* text-align: center; */
+  color: #ffffff;
+  background-color: #B25000;
+  border-radius: 15px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.trip-suggestion button {
+  width: 80px;
+}
+
+
+
+
+
+/* .name-container {
+  width: 252px;
+  height: 40px;
+  
+} */
