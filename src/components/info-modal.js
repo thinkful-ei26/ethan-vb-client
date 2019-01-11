@@ -8,8 +8,6 @@ import {closeModal} from '../actions/trips';
 
 export class InfoModal extends React.Component{
   render (){
-    console.log(this.props);
-    // if (this.props.modal){
       return (
         <div className="overlay">
             <h3>Welcome to VacationBrain! Here's how it works:</h3>
@@ -30,13 +28,6 @@ export class InfoModal extends React.Component{
         </div>
         )
       }
-    // }
 }
-
-// const mapStateToProps = state => {
-//   return {
-//     modal: state.tripsReducer.modal
-//   }
-// }
 
 export default connect()(InfoModal)

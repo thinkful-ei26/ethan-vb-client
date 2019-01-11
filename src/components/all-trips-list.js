@@ -11,24 +11,7 @@ export class AllTripsList extends React.Component {
     this.props.dispatch(fetchTrips());
   }
 
-  
-  // componentDidUpdate() {
-  //   this.props.dispatch(fetchTrips());
-  // }
-
   render () {
-    console.log(this.props);
-    // let tripsSuggested;
-    // if (this.props.trips.trip.suggestions.length){
-    //   tripsSuggested = 
-    //     <span>Other VacationBrain users have already recommended:
-    //     <ul>
-    //     {this.props.trips.trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
-    //     </ul>
-    //   </span>
-    // }
-    // let tripsList;
-    // tripsListOptions = this.props.trips.map
     const tripsList = this.props.trips.map(trip => 
       <section className="trip-object" key={trip.id}>
         <div className="trip-content">
@@ -65,8 +48,6 @@ export class AllTripsList extends React.Component {
 const mapStateToProps = state => {
   return {
     trips: state.tripsReducer.trips,
-    // error: state.tripsReducer.error,
-    // modal: state.tripsReducer.modal,
     state,
   }
 }

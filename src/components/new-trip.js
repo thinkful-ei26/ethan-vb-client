@@ -12,8 +12,6 @@ import './new-trip.css';
 export class NewTripForm extends React.Component {
 
   onSubmit(value) {
-    console.log(value);
-    // const newTrip = value;
     let selectedOptions = [];
     if (value.hiking){
       selectedOptions.push('Hiking')
@@ -57,20 +55,16 @@ export class NewTripForm extends React.Component {
     if(value.worldHistoricSites){
       selectedOptions.push('World Historic Sites')
     }
-    console.log(this.props);
     const newTrip = {
       name: value.name,
       duration: value.duration,
       selectedOptions: selectedOptions
     }
     this.props.dispatch(addTrip(newTrip));
-      // .then(this.props.dispatch(fetchTrips()));
     this.props.dispatch(reset('NewTrip'));
   }
 
   render(){
-    console.log(this.props);
-    // if (!this.props.modal){
     return (
     <div className="form-container">
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>

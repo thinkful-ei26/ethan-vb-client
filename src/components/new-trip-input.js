@@ -1,11 +1,9 @@
 import React from 'react';
-// import Multiselect from 'react-widgets/lib/Multiselect';
 
 import './new-trip-input.css'
 
 export default class Input extends React.Component{
   render(){
-    // console.log(this.props.children);
     
     const Element = this.props.element || 'input';
 

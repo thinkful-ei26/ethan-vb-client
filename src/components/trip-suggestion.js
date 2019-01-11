@@ -1,6 +1,5 @@
 import React from 'react';
 import {Field, reduxForm, reset} from 'redux-form';
-// import {connect} from 'react-redux'
 
 import Input from './new-trip-input';
 import {addSuggestion} from '../actions/trips';
@@ -9,8 +8,6 @@ import {required} from '../validators';
 class TripSuggestion extends React.Component{
   
   onSubmit(value) {
-    console.log(value);
-    console.log(this.props.form);
     const tripId = this.props.form;
     const newSuggestion = {
       suggestion: value,
@@ -22,7 +19,6 @@ class TripSuggestion extends React.Component{
   
   
   render(){
-    console.log(this.props);
     return (
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
       <Field 
@@ -39,6 +35,4 @@ class TripSuggestion extends React.Component{
   }
 }
 
-export default reduxForm({
-  // form: 'Suggestion'
-})(TripSuggestion)
+export default reduxForm({})(TripSuggestion)

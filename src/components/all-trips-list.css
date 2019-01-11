@@ -2,17 +2,6 @@
   color: black
 }
 
-/* section {
-  text-align: center
-} */
-
-/* .trip-content {
-  margin-top: 25px;
-  border: 1px green dashed;
-  width: 450px;
-  margin: 0 auto;
-} */
-
 .trip-content h3 {
   margin: 0 auto;
   width: 450px;
@@ -23,11 +12,6 @@ h2, h4, h5 {
   margin: 0 auto;
   width: 450px;
 }
-
-/* h5 {
-  margin: 0 auto;
-  width: 450px;
-} */
 
 .trip-content {
   padding-bottom: 25px 
@@ -54,7 +38,6 @@ h2, h4, h5 {
 .trip-options {
   margin: 0 auto;
   width: 450px;
-  /* border: 1px green dashed; */
   padding-top: 2px;
 }
 

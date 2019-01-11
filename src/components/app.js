@@ -7,7 +7,6 @@ import NewTrip from './new-trip';
 
 export class App extends React.Component {
   render(){
-    console.log(this.props);
     if (this.props.modal){
       return (
         <InfoModal />);

@@ -80,7 +80,6 @@ export const closeModal = () => {
 export const fetchTrips = () => {
   return(dispatch) => {
     dispatch(fetchTripsRequest());
-    // console.log(`${API_BASE_URL}/trips`);
     fetch(`${API_BASE_URL}/trips`)
       .then(res => res.json())
       .then(trips => dispatch(fetchTripsSuccess(trips)))
@@ -90,7 +89,6 @@ export const fetchTrips = () => {
 
 
 export const addTrip = (value) => {
-  console.log(value);
   return(dispatch) => {
     dispatch(addTripRequest());
     return fetch(`${API_BASE_URL}/trips`, 
