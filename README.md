@@ -21,35 +21,63 @@ The server side uses Node with Express and Mongoose to communicate with a MongoD
 
 Client codebase structure: 
 Src
+   
    Components
+      
       App.js
+      
       All-trips-list.js
+      
       Info-modal.js
+      
       New-trip-input.js
+      
       New-trip.js
+      
       Trip-suggestion.js
+   
    Actions
+      
       Trips.js
+   
    Reducers
+      
       Trips.js
+      
       Index.js
+   
    Tests
+   
    Validators.js
+   
    Index.js
+   
    Store.js
+   
    Config.js
    
+   
 Server codebase structure
+   
    Models
+   
       Trip.js
+   
    Routes
+      
       Trips.js
    Data
+      
       Trip-data.js
+   
    Test
+   
    Utils
+   
    Index.js
+   
    DB-Mongoose.js
+   
    Config.js
    
    
