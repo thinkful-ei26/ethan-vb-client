@@ -1,4 +1,5 @@
 Welcome to VacationBrain! 
+
 Here's how it works:
 
 Add a trip
@@ -20,6 +21,7 @@ The client side uses React with Redux for state managemeent and Redux Form for f
 The server side uses Node with Express and Mongoose to communicate with a MongoDB database hosted on mLab at https://mlab.com/databases/ethan-vb-db
 
 Client codebase structure: 
+
 Src
    
    Components
