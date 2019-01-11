@@ -10,4 +10,4 @@ The live VacationBrain client app can be found deployed on Heroku at https://eth
 
 The backend of the app is deployed on Heroku at https://ethan-vb-server.herokuapp.com/ and the server repo can be found at https://github.com/thinkful-ei26/ethan-vb-server.
 
-![Add Suggestion](../readme-images/vb-v1-add-suggestion.PNG)
+![Add Suggestion](../master/readme-images/vb-v1-add-suggestion.PNG)
