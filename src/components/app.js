@@ -10,8 +10,6 @@ export class App extends React.Component {
     console.log(this.props);
     if (this.props.modal){
       return (
-      // <div className="background-container"></div>
-      //   <div><InfoModal /></div>
         <InfoModal />);
     } else {
       return (
