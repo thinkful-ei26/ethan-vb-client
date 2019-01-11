@@ -1,4 +1,6 @@
-Welcome to VacationBrain! Here's how it works:
+Welcome to VacationBrain! 
+
+Here's how it works:
 Add a trip
 Give your trip a name and tell us what you're looking for in a vacation and how long you're travelling for.
 Other VacationBrain users will suggest a destination for you!
