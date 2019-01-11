@@ -9,7 +9,10 @@ export class App extends React.Component {
   render(){
     console.log(this.props);
     if (this.props.modal){
-      return (<InfoModal />)
+      return (
+      // <div className="background-container"></div>
+      //   <div><InfoModal /></div>
+        <InfoModal />);
     } else {
       return (
         <div>
@@ -26,6 +29,5 @@ const mapStateToProps = state => {
     modal: state.tripsReducer.modal
   }
 }
-
 
 export default connect(mapStateToProps)(App);

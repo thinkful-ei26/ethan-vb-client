@@ -44,6 +44,7 @@ button{
     letter-spacing: 0.3px;
     border-radius: 20px;
     background-color: #d9e4e8;
+    text-indent: 10px;
 }
 
 /* #name::before, #duration::before {
@@ -68,7 +69,7 @@ button {
   letter-spacing: 0.2px; */
   /* text-align: center; */
   color: #ffffff;
-  background-color: #B25000;
+  background-color: #E06500;
   border-radius: 15px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
 }

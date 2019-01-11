@@ -11,7 +11,7 @@ export class InfoModal extends React.Component{
     console.log(this.props);
     // if (this.props.modal){
       return (
-        <div className="overlay" id="modal">
+        <div className="overlay">
             <h3>Welcome to VacationBrain! Here's how it works:</h3>
             <section>
                 <p>Add a trip:</p>
