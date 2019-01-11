@@ -10,6 +10,45 @@ The live VacationBrain client app can be found deployed on Heroku at https://eth
 
 The backend of the app is deployed on Heroku at https://ethan-vb-server.herokuapp.com/ and the server repo can be found at https://github.com/thinkful-ei26/ethan-vb-server.
 
+The app is built on the MERN stack. 
+The client side uses React with Redux for state managemeent and Redux Form for form management. 
+The server side uses Node with Express and Mongoose to communicate with a MongoDB database hosted on mLab at https://mlab.com/databases/ethan-vb-db
+
+Client codebase structure: 
+Src
+   Components
+      App.js
+      All-trips-list.js
+      Info-modal.js
+      New-trip-input.js
+      New-trip.js
+      Trip-suggestion.js
+   Actions
+      Trips.js
+   Reducers
+      Trips.js
+      Index.js
+   Tests
+   Validators.js
+   Index.js
+   Store.js
+   Config.js
+   
+Server codebase structure
+   Models
+      Trip.js
+   Routes
+      Trips.js
+   Data
+      Trip-data.js
+   Test
+   Utils
+   Index.js
+   DB-Mongoose.js
+   Config.js
+   
+   
+   
 
 Relevant Images:
 User Instructions:
