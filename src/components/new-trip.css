@@ -8,6 +8,16 @@ button{
   font-weight: bold
 }
 
+fieldset {
+  border: 0 none;
+  padding: 0
+}
+
+legend {
+  padding-bottom: 5px;
+  margin-bottom: 10px
+}
+
 .form-container {
   margin-bottom: 25px
 }
@@ -21,7 +31,7 @@ button{
   padding-bottom: 0px
 }
 
-.form-container p {
+.form-container fieldset {
   margin-top: 0px;
   padding-top: 0px;
   font-style: italic
