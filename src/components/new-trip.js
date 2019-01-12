@@ -68,8 +68,9 @@ export class NewTripForm extends React.Component {
     return (
     <div className="form-container">
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-      <h2>What are you looking for in a vacation?</h2>
-      <p>Select as many as you want</p>
+      <h1>What are you looking for in a vacation?</h1>
+      <fieldset>
+      <legend>Select as many as you want</legend>
       <Field 
         component={Input}
         element="input"
@@ -169,6 +170,7 @@ export class NewTripForm extends React.Component {
         type="checkbox" 
         name="gambling" 
       />
+    </fieldset>
       <Field 
         component={Input}
         element="input"

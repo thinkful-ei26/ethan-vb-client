@@ -38,7 +38,7 @@ export class AllTripsList extends React.Component {
       </section>);
     return (
       <main>
-        <h2>Trips From Other Users:</h2>
+        <h1>Trips From Other Users:</h1>
         {tripsList}
       </main>
     )

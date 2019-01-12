@@ -10,7 +10,7 @@ export class InfoModal extends React.Component{
   render (){
       return (
         <div className="overlay">
-            <header role="banner"><h3>Welcome to VacationBrain! Here's how it works:</h3></header>
+            <header role="banner"><h1>Welcome to VacationBrain! Here's how it works:</h1></header>
             <section>
                 <p><strong>Add a trip</strong></p>
                 <ul>
