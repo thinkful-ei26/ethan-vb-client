@@ -14,14 +14,14 @@ export class App extends React.Component {
     // } else {
       return (
         <div>
-          <Route path="/" component={Navbar} />
+          {/* <Route path="/" component={Navbar} /> */}
           <Route exact path="/" component={InfoModal} />
           <Route exact path="/home" component={HomePage}></Route>
         </div>
       );
     }
   }
-}
+
 
 
 const mapStateToProps = state => ({
