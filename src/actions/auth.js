@@ -2,40 +2,38 @@ import jwtDecode from 'jwt-decode';
 import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-import {saveAuthToken, clearAuthToken} from '../components/common/local-storage';
-import {display} from './navigation';
-import {
-    SET_AUTH_TOKEN,
-    CLEAR_AUTH,
-    AUTH_REQUEST,
-    AUTH_SUCCESS,
-    AUTH_ERROR,
-    FORM_ERROR
-} from './types';
+import {saveAuthToken, clearAuthToken} from '../components/local-storage';
+// import {display} from './navigation';
 
+export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
     type: SET_AUTH_TOKEN,
     authToken
 });
 
+export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
     type: CLEAR_AUTH
 });
 
+export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const authRequest = () => ({
     type: AUTH_REQUEST
 });
 
+export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const authSuccess = currentUser => ({
     type: AUTH_SUCCESS,
     currentUser
 });
 
+export const AUTH_ERROR = 'AUTH_ERROR';
 export const authError = error => ({
     type: AUTH_ERROR,
     error
 });
 
+export const FORM_ERROR = 'FORM_ERROR';
 export const formError = formError => ({
     type: FORM_ERROR,
     formError
@@ -68,9 +66,9 @@ export const login = (username, password) => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            .then(()=>{
-                dispatch(display('neighbors'))
-            })
+            // .then(()=>{
+            //     dispatch(display('neighbors'))
+            // })
             .catch(err => {
                 const {status} = err;
                 const message =
