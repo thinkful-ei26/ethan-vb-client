@@ -7,7 +7,7 @@ const initialState = {
   modal: true
 };
 
-export const tripsReducer = (state=initialState, action) => {
+export default (state=initialState, action) => {
   if (action.type === FETCH_TRIPS_REQUEST) {
     return Object.assign({}, state, {
       loading: true
