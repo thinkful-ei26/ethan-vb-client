@@ -1,4 +1,5 @@
 import {API_BASE_URL} from '../config';
+import {normalizeResponseErrors} from './utils';
 
 export const FETCH_TRIPS_REQUEST = 'FETCH_TRIPS_REQUEST';
 export const fetchTripsRequest = () => {
@@ -81,11 +82,27 @@ export const fetchTrips = () => {
   return(dispatch) => {
     dispatch(fetchTripsRequest());
     fetch(`${API_BASE_URL}/trips`)
+      .then(res => normalizeResponseErrors(res))
       .then(res => res.json())
       .then(trips => dispatch(fetchTripsSuccess(trips)))
       .catch(err => dispatch(fetchTripsError(err)))
   }
 }
+
+export const fetchMyTrips = () => (dispatch, getState) => {
+    dispatch(fetchTripsRequest());
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/trips/my-trips`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      }
+    })
+      .then(res => normalizeResponseErrors(res))
+      .then(res => res.json())
+      .then(trips => dispatch(fetchTripsSuccess(trips)))
+      .catch(err => dispatch(fetchTripsError(err)))
+  }
 
 
 export const addTrip = (value) => {

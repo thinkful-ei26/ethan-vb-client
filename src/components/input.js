@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { focusOn } from '../../actions/navigation';
-import { formError } from '../../actions/auth';
+import { focusOn } from '../actions/navigation';
+import { formError } from '../actions/auth';
 
 
 export class Input extends React.Component {

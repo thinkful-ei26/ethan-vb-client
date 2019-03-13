@@ -4,7 +4,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import Input from './input';
 import {login, formError} from '../actions/auth';
 import {required, nonEmpty} from './validators';
-// import { display, focusOn } from '../actions/navigation'
+import { display, focusOn } from '../actions/navigation'
 
 export class LogInForm extends React.Component {
     onSubmit(values) {
