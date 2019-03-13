@@ -5,6 +5,7 @@ import {Route, withRouter} from 'react-router-dom';
 import InfoModal from './info-modal';
 import AllTripsList from './all-trips-list';
 import NewTrip from './new-trip';
+import Homepage from './homepage';
 
 export class App extends React.Component {
   render(){
@@ -16,7 +17,7 @@ export class App extends React.Component {
         <div>
           {/* <Route path="/" component={Navbar} /> */}
           <Route exact path="/" component={InfoModal} />
-          <Route exact path="/home" component={HomePage}></Route>
+          <Route exact path="/home" component={Homepage}></Route>
         </div>
       );
     }

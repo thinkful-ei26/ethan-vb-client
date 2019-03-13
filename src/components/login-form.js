@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from '../common/input';
-import {login} from '../../actions/auth';
-import {required, nonEmpty} from '../common/validators';
-import { display, focusOn } from '../../actions/navigation'
-import { formError } from '../../actions/auth'
+import Input from './input';
+import {login, formError} from '../actions/auth';
+import {required, nonEmpty} from './validators';
+// import { display, focusOn } from '../actions/navigation'
 
 export class LogInForm extends React.Component {
     onSubmit(values) {
@@ -81,20 +80,7 @@ export class LogInForm extends React.Component {
                         className="link-to-form"
                         onClick={()=>this.onClick('registerUsername')} 
                         > Sign Up Here!</button>
-                    </p>   
-                    <p>Want To See A Live Demo?
-                        <button
-                        type="button"
-                        className="link-to-form"
-                        onClick={()=>{
-                            let values = {
-                                loginUsername:'ross',
-                                password:"friends123",
-                            }
-                            this.onSubmit(values)
-                        }} 
-                        > Click Here!</button>
-                    </p>  
+                    </p>     
                 </div>
             </form>
         );
