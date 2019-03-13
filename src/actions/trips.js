@@ -142,9 +142,10 @@ export const addTrip = (value) => (dispatch, getState) => {
 export const addSuggestion = (value) => (dispatch, getState) => {
     dispatch(addSuggestionRequest());
     const authToken = getState().auth.authToken;
-    return fetch(`${API_BASE_URL}/trips/${value.id}`, 
+    console.log(value);
+    return fetch(`${API_BASE_URL}/suggestions/${value.id}`, 
     {
-      method: 'PUT',
+      method: 'POST',
       body: JSON.stringify(value.suggestion),
       headers: {
         'Content-Type': 'application/json',

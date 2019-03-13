@@ -12,7 +12,7 @@ export class AllTripsList extends React.Component {
   }
 
   render () {
-    console.log(this.props);
+    // console.log(this.props);
     const tripsList = this.props.trips.map(trip => 
       <section className="trip-object" key={trip.id}>
         <div className="trip-content">
