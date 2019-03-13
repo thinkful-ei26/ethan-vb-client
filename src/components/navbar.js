@@ -110,7 +110,7 @@ class SidebarNav extends React.Component{
                 }
                 >Log Out
                 </Link>
-              </section>}
+              </section>
             </nav>
           }
           children=""

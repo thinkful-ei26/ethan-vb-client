@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {Link, Redirect} from 'react-router-dom';
 
 import LogInForm from './login-form';
+import SignUpForm from './sign-up-form';
 
 import './info-modal.css'
 
@@ -33,8 +34,9 @@ export class InfoModal extends React.Component{
                 </ul>
             </section>
             <section>
-                <LogInForm />
-                <Link to="/register">Register</Link>
+            <section className="form-section">
+                    {this.props.display==="loginUsername" ? <LogInForm /> : this.props.display==="registerUsername" ? <SignUpForm /> : <LogInForm /> }
+                </section>
             </section>
             {/* <button className="close" onClick={() => this.props.dispatch(closeModal())}>Got It!</button> */}
         </div>
@@ -43,7 +45,8 @@ export class InfoModal extends React.Component{
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: state.auth.currentUser !== null,
+    display: state.navigation.display,
 });
 
 export default connect(mapStateToProps)(InfoModal)

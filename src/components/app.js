@@ -3,8 +3,8 @@ import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 
 import InfoModal from './info-modal';
-import AllTripsList from './all-trips-list';
-import NewTrip from './new-trip';
+// import AllTripsList from './all-trips-list';
+// import NewTrip from './new-trip';
 import Homepage from './homepage';
 import SignUpForm from './sign-up-form';
 import LoginForm from './login-form';
@@ -15,6 +15,7 @@ export class App extends React.Component {
     //   return (
     //     <InfoModal />);
     // } else {
+      console.log(this.props);
       return (
         <div>
           {/* <Route path="/" component={Navbar} /> */}

@@ -100,9 +100,7 @@ export const fetchTrips = () => (dispatch, getState) => {
     }
   })
     .then(res => normalizeResponseErrors(res))
-    // .then(res => console.log(res))
     .then(res => res.json())
-    // .then(trips => console.log(trips))
     .then(trips => dispatch(fetchTripsSuccess(trips)))
     .catch(err => dispatch(fetchTripsError(err)))
 }
@@ -123,38 +121,38 @@ export const fetchMyTrips = () => (dispatch, getState) => {
   }
 
 
-export const addTrip = (value) => {
-  return(dispatch) => {
+export const addTrip = (value) => (dispatch, getState) => {
     dispatch(addTripRequest());
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/trips`, 
     {
       method: 'POST',
       body: JSON.stringify(value),
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        Authorization: `Bearer ${authToken}`
       }
     })
       .then(res => res.json())
       .then(() => dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
-}
 
-export const addSuggestion = (value) => {
-  return(dispatch) => {
+export const addSuggestion = (value) => (dispatch, getState) => {
     dispatch(addSuggestionRequest());
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/trips/${value.id}`, 
     {
       method: 'PUT',
       body: JSON.stringify(value.suggestion),
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        Authorization: `Bearer ${authToken}`
       }
     })
       .then(res => res.json())
       .then(() => dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
-}
