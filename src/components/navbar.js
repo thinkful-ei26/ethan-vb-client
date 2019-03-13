@@ -1,13 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Sidebar from "react-sidebar";
-import requiresLogin from '../common/requires-login';
+// import requiresLogin from '../common/requires-login';
 import { display, focusOn } from '../actions/navigation'
 import { fetchTrips, fetchMyTrips } from '../actions/trips';
 import { clearAuth } from '../actions/auth';
 import {Link} from 'react-router-dom';
-import { clearAuthToken } from '../common/local-storage';
-import './sidebar.scss';
+import { clearAuthToken } from './local-storage';
+// import './sidebar.scss';
 
 const mql = window.matchMedia(`(min-width: 900px)`);
 
@@ -75,8 +75,8 @@ class SidebarNav extends React.Component{
                   className="content" 
                   onClick={()=>{
                     this.onSetSidebarOpen(false)
-                    this.props.dispatch(fetchTrips())
-                    this.props.dispatch(focusOn('searchPosts'));
+                    this.props.dispatch(display('my-trips'))
+                    this.props.dispatch(fetchMyTrips())
                   }
                   }>All Trips
                 </Link>
@@ -85,6 +85,7 @@ class SidebarNav extends React.Component{
                   className="content" 
                   onClick={()=>{
                   this.onSetSidebarOpen(false)
+                  this.props.dispatch(display('all-trips'))
                   this.props.dispatch(fetchMyTrips())
                   } 
                 }
@@ -99,6 +100,15 @@ class SidebarNav extends React.Component{
                   } 
                 }
                 >Add A New Trip
+                </Link>
+                <Link 
+                  to="/"
+                  className="content" 
+                  onClick={()=>{
+                  this.logOut()
+                  } 
+                }
+                >Log Out
                 </Link>
               </section>}
             </nav>
@@ -115,9 +125,9 @@ class SidebarNav extends React.Component{
   }
 }
 const mapStateToProps = state => ({
-  display: state.nav.display,
+  display: state.navigation.display,
   loggedIn: state.auth.currentUser !== null,
   currentUser: state.auth.currentUser,
 });
 
-export default requiresLogin()(connect(mapStateToProps)(SidebarNav));
+export default (connect(mapStateToProps)(SidebarNav));

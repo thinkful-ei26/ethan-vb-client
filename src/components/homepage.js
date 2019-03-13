@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import AllTripsList from './all-trips-list';
 import NewTripForm from './new-trip';
 import InfoModal from './info-modal';
+import SidebarNav from './navbar';
 
 export class Homepage extends React.Component {
   
@@ -16,6 +17,7 @@ export class Homepage extends React.Component {
   render(){
     return(
       <main className="main">
+        <SidebarNav />
         {this.display()}
       </main>
     );
@@ -23,7 +25,7 @@ export class Homepage extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  display: state.nav.display,
+  display: state.navigation.display,
   currentUser: state.auth.currentUser
 });
 

@@ -73,8 +73,8 @@ export class Input extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    focusOn: state.nav.focusOn,
-    focusForm: state.nav.focusForm,
+    // focusOn: state.nav.focusOn,
+    // focusForm: state.nav.focusForm,
   });
   
   export default connect(mapStateToProps)(Input);

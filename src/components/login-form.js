@@ -88,7 +88,7 @@ export class LogInForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    focusOn: state.nav.focusOn,
+    focusOn: state.navigation.focusOn,
     formError: state.auth.formError
 });
 

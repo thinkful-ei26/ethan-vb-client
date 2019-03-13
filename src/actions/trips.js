@@ -78,15 +78,33 @@ export const closeModal = () => {
 }
 
 
-export const fetchTrips = () => {
-  return(dispatch) => {
-    dispatch(fetchTripsRequest());
-    fetch(`${API_BASE_URL}/trips`)
-      .then(res => normalizeResponseErrors(res))
-      .then(res => res.json())
-      .then(trips => dispatch(fetchTripsSuccess(trips)))
-      .catch(err => dispatch(fetchTripsError(err)))
-  }
+// export const fetchTrips = () => {
+//   return(dispatch) => {
+//     dispatch(fetchTripsRequest());
+//     fetch(`${API_BASE_URL}/trips`)
+//       .then(res => normalizeResponseErrors(res))
+//       .then(res => res.json())
+//       .then(trips => dispatch(fetchTripsSuccess(trips)))
+//       .catch(err => dispatch(fetchTripsError(err)))
+//   }
+// }
+
+export const fetchTrips = () => (dispatch, getState) => {
+  dispatch(fetchTripsRequest());
+  const authToken = getState().auth.authToken;
+  console.log(authToken);
+  fetch(`${API_BASE_URL}/trips`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    // .then(res => console.log(res))
+    .then(res => res.json())
+    // .then(trips => console.log(trips))
+    .then(trips => dispatch(fetchTripsSuccess(trips)))
+    .catch(err => dispatch(fetchTripsError(err)))
 }
 
 export const fetchMyTrips = () => (dispatch, getState) => {

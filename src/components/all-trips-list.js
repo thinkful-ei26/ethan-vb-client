@@ -29,7 +29,7 @@ export class AllTripsList extends React.Component {
             <div className="trip-recommendations">
               <h5>Other VacationBrain users have already recommended:</h5>
               <ul>
-                {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
+                {trip.suggestions.map(suggestion => <li key={suggestion.id}> {suggestion.suggestion} </li>)}
               </ul>
             </div>
             }

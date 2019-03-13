@@ -13,7 +13,7 @@ export class InfoModal extends React.Component{
    
   render (){
     if (this.props.loggedIn){
-        return <Redirect to="/dashboard" />
+        return <Redirect to="/home" />
       }
 
     return (
@@ -33,11 +33,10 @@ export class InfoModal extends React.Component{
                 </ul>
             </section>
             <section>
-            <h2>Sign In</h2>
                 <LogInForm />
                 <Link to="/register">Register</Link>
             </section>
-            <button className="close" onClick={() => this.props.dispatch(closeModal())}>Got It!</button>
+            {/* <button className="close" onClick={() => this.props.dispatch(closeModal())}>Got It!</button> */}
         </div>
         )
       }

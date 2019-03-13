@@ -9,12 +9,18 @@ export const registerUser = user => dispatch => {
   let formData = new FormData();
 
   Object.keys(user).forEach(item=> {
-      formData.append(item, (user[item]))
+    formData.append(item, (user[item]))
   });
+
+  console.log(user);
+
 
   return fetch(`${API_BASE_URL}/users`, {
       method: 'POST',
-      body: formData
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
   })
       .then(res => normalizeResponseErrors(res))
       .then(res => res.json())

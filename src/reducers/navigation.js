@@ -5,7 +5,6 @@ import {
 
 const INITIAL_STATE = {
   display: 'all-trips',
-  showAnimation: false,
   focusOn: "",
 };
 

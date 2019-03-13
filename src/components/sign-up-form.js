@@ -1,11 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Field, reduxForm, focus} from 'redux-form';
-import {registerUser} from '../../actions/users';
-import Input from '../common/input';
-import { formError } from '../../actions/auth'
-import { display, focusOn } from '../../actions/navigation'
-import {required, nonEmpty, matches, length, isTrimmed } from '../common/validators';
+import {Link, Redirect} from 'react-router-dom';
+import {registerUser} from '../actions/users';
+import Input from './input';
+import { formError } from '../actions/auth'
+import { display, focusOn } from '../actions/navigation'
+import {required, nonEmpty, matches, length, isTrimmed } from './validators';
 
 const passwordLength = length({min: 6, max: 72});
 const matchesPassword = matches('password');
@@ -21,8 +22,8 @@ export class SignUpForm extends React.Component {
     }
 
     onSubmit(values) {
-        const {password, firstName, lastName, img, registerUsername} = values;
-        const user = { password, firstName, lastName, img, registerUsername};
+        const {password, firstName, lastName, registerUsername} = values;
+        const user = { password, firstName, lastName, registerUsername};
         return this.props.dispatch(registerUser(user))
     }
 
@@ -51,7 +52,9 @@ export class SignUpForm extends React.Component {
     }
 
     render() {
-
+      if (this.props.loggedIn) {
+        return <Redirect to="/home" />;
+    }
         return (
             <form
                 id="register"
@@ -100,23 +103,6 @@ export class SignUpForm extends React.Component {
                     validate={[required, nonEmpty, matchesPassword]}
                     label="Confirm Password"
                 />
-
-                <button 
-                    type="button"
-                    className="upload-photo"
-                    onClick={()=>this.img.click()}
-                >
-                   <i className="fas fa-camera"></i> Upload Profile Picture {this.state.uploadedFile && <i className="fas fa-file"></i>}
-                </button>
-                <input 
-                    type="file"
-                    accept="image/*"
-                    className="image-input"
-                    name="img"
-                    id="img"
-                    onChange={()=>this.checkIfFile(this.img)}
-                    ref={input => this.img = input} 
-                />
                 <button
                     type="submit"
                     className="submit"
@@ -138,7 +124,8 @@ export class SignUpForm extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    formError: state.auth.formError
+  formError: state.auth.formError,
+  loggedIn: state.auth.currentUser !== null
 });
 
 export default connect(mapStateToProps)(reduxForm({
