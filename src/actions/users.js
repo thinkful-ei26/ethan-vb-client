@@ -1,7 +1,7 @@
 import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import { normalizeResponseErrors } from './utils';
-import { refreshProfileAuthToken, authError, login } from './auth';
+import { authError, login } from './auth';
 
 
 export const registerUser = user => dispatch => {

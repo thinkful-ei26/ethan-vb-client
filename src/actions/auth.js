@@ -42,7 +42,6 @@ export const formError = formError => ({
 // Stores the auth token in state and localStorage, and decodes and stores
 // the user data stored in the token
 const storeAuthInfo = (authToken, dispatch) => {
-    console.log('in store auth info');
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
@@ -67,9 +66,6 @@ export const login = (username, password) => dispatch => {
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
             .then(({authToken}) => storeAuthInfo(authToken, dispatch))
-            // .then(()=>{
-            //     dispatch(display('neighbors'))
-            // })
             .catch(err => {
                 const {status} = err;
                 const message =

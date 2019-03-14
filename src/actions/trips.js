@@ -77,22 +77,9 @@ export const closeModal = () => {
   }
 }
 
-
-// export const fetchTrips = () => {
-//   return(dispatch) => {
-//     dispatch(fetchTripsRequest());
-//     fetch(`${API_BASE_URL}/trips`)
-//       .then(res => normalizeResponseErrors(res))
-//       .then(res => res.json())
-//       .then(trips => dispatch(fetchTripsSuccess(trips)))
-//       .catch(err => dispatch(fetchTripsError(err)))
-//   }
-// }
-
 export const fetchTrips = () => (dispatch, getState) => {
   dispatch(fetchTripsRequest());
   const authToken = getState().auth.authToken;
-  console.log(authToken);
   fetch(`${API_BASE_URL}/trips`, {
     method: 'GET',
     headers: {
@@ -142,7 +129,6 @@ export const addTrip = (value) => (dispatch, getState) => {
 export const addSuggestion = (value) => (dispatch, getState) => {
     dispatch(addSuggestionRequest());
     const authToken = getState().auth.authToken;
-    console.log(value);
     return fetch(`${API_BASE_URL}/suggestions/${value.id}`, 
     {
       method: 'POST',

@@ -11,7 +11,6 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case DISPLAY:
-      console.log('in display reducer')
       return Object.assign({}, state, {
         display: action.component,
       });   

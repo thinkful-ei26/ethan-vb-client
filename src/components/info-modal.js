@@ -1,14 +1,12 @@
 import React from 'react';
 
 import {connect} from 'react-redux';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 
 import LogInForm from './login-form';
 import SignUpForm from './sign-up-form';
 
 import './info-modal.css'
-
-import {closeModal} from '../actions/trips';
 
 export class InfoModal extends React.Component{
    
@@ -30,7 +28,7 @@ export class InfoModal extends React.Component{
             <section>
                 <p><strong>Add a suggestion</strong></p>
                 <ul>
-                    <li>Have great vacation ideas of your own? Submit a suggestion for other users' requested trips. You can do this without registering for an account</li>
+                    <li>Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.</li>
                 </ul>
             </section>
             <section>
@@ -38,7 +36,6 @@ export class InfoModal extends React.Component{
                     {this.props.display==="loginUsername" ? <LogInForm /> : this.props.display==="registerUsername" ? <SignUpForm /> : <LogInForm /> }
                 </section>
             </section>
-            {/* <button className="close" onClick={() => this.props.dispatch(closeModal())}>Got It!</button> */}
         </div>
         )
       }

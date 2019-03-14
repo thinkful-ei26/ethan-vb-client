@@ -1,9 +1,59 @@
 .overlay {
-  margin: 0 auto;
+  /* margin: 0 auto;
   width: 450px;
+  padding: 5px; */
+  display: flex;
+  flex-direction: column
+
+}
+
+.overlay section, .overlay h1, .overlay h2 {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 400px
+}
+
+.overlay h1, .overlay h2 {
+  text-align: center
+}
+
+.overlay form {
+  margin: auto;
+  flex-direction: column;
+  width: 350px
+}
+
+.overlay .form-input{
+  display: flex;
+  width: 100%;
+  margin: 20px auto;
+  align-items: center;
+}
+
+
+.overlay input {
+  width: 190px;
+  height: 16px;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  border-radius: 20px;
+  background-color: #d9e4e8;
+  text-indent: 10px;
+  border-radius: 5px;
+  flex: 1 1;
   padding: 5px;
 }
 
-.overlay section {
-  padding-bottom: 10px
+@media screen and (max-width: 479px) {
+  .overlay section, .overlay h1, .overlay h2, .overlay form {
+    margin: auto;
+    flex-direction: column;
+    width: 350px
+  }
 }

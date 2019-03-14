@@ -2,12 +2,11 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Sidebar from "react-sidebar";
 // import requiresLogin from '../common/requires-login';
-import { display, focusOn } from '../actions/navigation'
-import { fetchTrips, fetchMyTrips } from '../actions/trips';
+import { display } from '../actions/navigation'
 import { clearAuth } from '../actions/auth';
 import {Link} from 'react-router-dom';
 import { clearAuthToken } from './local-storage';
-// import './sidebar.scss';
+import './navbar.css';
 
 const mql = window.matchMedia(`(min-width: 900px)`);
 
@@ -61,36 +60,26 @@ class SidebarNav extends React.Component{
           sidebar=
           {
             <nav className="sidebar" style={{display: `${!this.state.sidebarOpen && !this.state.sidebarDocked ? 'none' : 'inherit'}`}}>
-              {/* <button
-                className="nav-parent"
-                onClick={()=>{
-                  this.toggleCategory('showForum')
-                }}
-              >
-              <i className="fas fa-edit"></i> Forums {this.state.showForum ? <i className="fas fa-angle-up"></i> : <i className="fas fa-angle-down"></i>}
-              </button> */}
               <section className="options">
                 <Link 
                   to="/home"
                   className="content" 
                   onClick={()=>{
                     this.onSetSidebarOpen(false)
-                    this.props.dispatch(display('my-trips'))
-                    this.props.dispatch(fetchMyTrips())
+                    this.props.dispatch(display('all-trips'))
                   }
                   }>All Trips
-                </Link>
+                </Link><br></br>
                 <Link 
                   to="/home"
                   className="content" 
                   onClick={()=>{
                   this.onSetSidebarOpen(false)
-                  this.props.dispatch(display('all-trips'))
-                  this.props.dispatch(fetchMyTrips())
+                  this.props.dispatch(display('my-trips'))
                   } 
                 }
                 >My Trips
-                </Link>
+                </Link><br></br>
                 <Link 
                   to="/home"
                   className="content" 
@@ -100,7 +89,7 @@ class SidebarNav extends React.Component{
                   } 
                 }
                 >Add A New Trip
-                </Link>
+                </Link><br></br>
                 <Link 
                   to="/"
                   className="content" 
@@ -109,7 +98,7 @@ class SidebarNav extends React.Component{
                   } 
                 }
                 >Log Out
-                </Link>
+                </Link><br></br>
               </section>
             </nav>
           }
@@ -117,7 +106,7 @@ class SidebarNav extends React.Component{
           open={this.state.sidebarOpen}
           docked={this.state.sidebarDocked}
           onSetOpen={this.onSetSidebarOpen}
-          styles={{ sidebar: { position: 'fixed', top: 55, background: 'rgb(237, 236, 217)', width: 200, }, root: {position: 'relative', boxShadow: 0}, }}
+          styles={{ sidebar: { position: 'fixed', top: 0, background: 'rgb(224, 101, 0, 0.8)', width: 200, }, root: {position: 'relative', boxShadow: 0}, }}
         >
         </Sidebar>
         </React.Fragment>

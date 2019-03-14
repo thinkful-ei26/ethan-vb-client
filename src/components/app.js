@@ -15,7 +15,7 @@ export class App extends React.Component {
     //   return (
     //     <InfoModal />);
     // } else {
-      console.log(this.props);
+      // console.log(this.props);
       return (
         <div>
           {/* <Route path="/" component={Navbar} /> */}

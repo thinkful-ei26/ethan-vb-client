@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Field, reduxForm, focus} from 'redux-form';
-import {Link, Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {registerUser} from '../actions/users';
 import Input from './input';
 import { formError } from '../actions/auth'

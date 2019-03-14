@@ -68,7 +68,7 @@ export class NewTripForm extends React.Component {
     return (
     <div className="form-container">
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
-      <h1>What are you looking for in a vacation?</h1>
+      <h1>What are you looking for in your vacation?</h1>
       <fieldset>
       <legend>Select as many as you want</legend>
       <Field 
