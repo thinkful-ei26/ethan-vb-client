@@ -1,6 +1,6 @@
-Welcome to VacationBrain! 
+# Welcome to VacationBrain! 
 
-Here's how it works:
+### Here's how it works:
 
 Add a trip
 
@@ -13,6 +13,7 @@ Add a suggestion
 Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.
 
 The live VacationBrain client app can be found deployed on Heroku at https://ethan-vb-client.herokuapp.com/.
+You can create an account or use the demo account (username: demo, password: password)
 
 The backend of the app is deployed on Heroku at https://ethan-vb-server.herokuapp.com/ and the server repo can be found at https://github.com/thinkful-ei26/ethan-vb-server.
 
