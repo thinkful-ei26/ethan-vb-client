@@ -1,0 +1,30 @@
+.open-sidebar {
+  width: 50px
+}
+
+.sidebar .content, .sidebar .nav-parent{
+  display: block;
+  color:  black;
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px 0;
+  text-decoration: none;
+  text-align: left;
+  padding:10px 20px 10px 40px;
+}
+
+.options {
+  margin-top: 70px ;
+}
+
+.sidebar .content:hover, 
+.sidebar .content:focus, 
+.sidebar .nav-parent:hover, 
+.sidebar .nav-parent:focus{
+  outline: 0;
+  background:#82bdc7;
+  color:black;
+}
