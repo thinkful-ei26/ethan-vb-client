@@ -21,7 +21,7 @@ The app is built on the MERN stack.
 The client side uses React with Redux for state managemeent and Redux Form for form management. 
 The server side uses Node with Express and Mongoose to communicate with a MongoDB database hosted on mLab at https://mlab.com/databases/ethan-vb-db
 
-Client codebase structure: 
+### Client codebase structure: 
 
 Src
    
