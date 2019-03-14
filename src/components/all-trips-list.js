@@ -12,6 +12,7 @@ export class AllTripsList extends React.Component {
   }
 
   render () {
+    // console.log(this.props);
     const tripsList = this.props.trips.map(trip => 
       <section className="trip-object" key={trip.id}>
         <div className="trip-content">
@@ -28,7 +29,7 @@ export class AllTripsList extends React.Component {
             <div className="trip-recommendations">
               <h5>Other VacationBrain users have already recommended:</h5>
               <ul>
-                {trip.suggestions.map((option, index) => <li key={index}> {option} </li>)}
+                {trip.suggestions.map(suggestion => <li key={suggestion.id}> {suggestion.suggestion} </li>)}
               </ul>
             </div>
             }
@@ -38,7 +39,7 @@ export class AllTripsList extends React.Component {
       </section>);
     return (
       <main>
-        <h1>Trips From Other Users:</h1>
+        <h1>Everyone's Trips:</h1>
         <div className="all-trips-container">
           {tripsList}
         </div>
@@ -49,7 +50,7 @@ export class AllTripsList extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    trips: state.tripsReducer.trips,
+    trips: state.trips.trips,
     state,
   }
 }

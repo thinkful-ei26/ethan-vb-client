@@ -1,4 +1,5 @@
 import {API_BASE_URL} from '../config';
+import {normalizeResponseErrors} from './utils';
 
 export const FETCH_TRIPS_REQUEST = 'FETCH_TRIPS_REQUEST';
 export const fetchTripsRequest = () => {
@@ -76,50 +77,69 @@ export const closeModal = () => {
   }
 }
 
+export const fetchTrips = () => (dispatch, getState) => {
+  dispatch(fetchTripsRequest());
+  const authToken = getState().auth.authToken;
+  fetch(`${API_BASE_URL}/trips`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${authToken}`
+    }
+  })
+    .then(res => normalizeResponseErrors(res))
+    .then(res => res.json())
+    .then(trips => dispatch(fetchTripsSuccess(trips)))
+    .catch(err => dispatch(fetchTripsError(err)))
+}
 
-export const fetchTrips = () => {
-  return(dispatch) => {
+export const fetchMyTrips = () => (dispatch, getState) => {
     dispatch(fetchTripsRequest());
-    fetch(`${API_BASE_URL}/trips`)
+    const authToken = getState().auth.authToken;
+    fetch(`${API_BASE_URL}/trips/my-trips`, {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer ${authToken}`
+      }
+    })
+      .then(res => normalizeResponseErrors(res))
       .then(res => res.json())
       .then(trips => dispatch(fetchTripsSuccess(trips)))
       .catch(err => dispatch(fetchTripsError(err)))
   }
-}
 
 
-export const addTrip = (value) => {
-  return(dispatch) => {
+export const addTrip = (value) => (dispatch, getState) => {
     dispatch(addTripRequest());
+    const authToken = getState().auth.authToken;
     return fetch(`${API_BASE_URL}/trips`, 
     {
       method: 'POST',
       body: JSON.stringify(value),
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        Authorization: `Bearer ${authToken}`
       }
     })
       .then(res => res.json())
       .then(() => dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
-}
 
-export const addSuggestion = (value) => {
-  return(dispatch) => {
+export const addSuggestion = (value) => (dispatch, getState) => {
     dispatch(addSuggestionRequest());
-    return fetch(`${API_BASE_URL}/trips/${value.id}`, 
+    const authToken = getState().auth.authToken;
+    return fetch(`${API_BASE_URL}/suggestions/${value.id}`, 
     {
-      method: 'PUT',
+      method: 'POST',
       body: JSON.stringify(value.suggestion),
       headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        Authorization: `Bearer ${authToken}`
       }
     })
       .then(res => res.json())
       .then(() => dispatch(fetchTrips()))
       .catch(err => dispatch(addTripError(err)))
   }
-}

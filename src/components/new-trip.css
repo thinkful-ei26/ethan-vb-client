@@ -1,7 +1,13 @@
 form {
   margin: 0 auto;
-  width: 450px;
+  width: 400px;
   padding: 5px;
+}
+
+form h1 {
+  text-align: center;
+  width: 350px;
+  margin-bottom: 10px
 }
 
 button{
@@ -72,6 +78,10 @@ button {
   background-color: #E06500;
   border-radius: 15px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+button:focus, button:hover{
+  color: black
 }
 
 .trip-suggestion button {

@@ -1,10 +1,14 @@
 import {combineReducers} from 'redux';
-import {tripsReducer} from './trips';
+import trips from './trips';
+import auth from './auth';
+import navigation from './navigation'
 import {reducer as formReducer} from 'redux-form';
 
 const rootReducer = combineReducers({
   form: formReducer,
-  tripsReducer
+  trips,
+  navigation,
+  auth
 });
 
 export default rootReducer;
