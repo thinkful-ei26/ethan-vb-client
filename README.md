@@ -1,104 +1,82 @@
-# Welcome to VacationBrain! 
+# [VacationBrain](https://ethan-vb-client.herokuapp.com/)
 
-### Here's how it works:
-
-Add a trip
-
-Give your trip a name and tell us what you're looking for in a vacation and how long you're travelling for.
-
-Other VacationBrain users will suggest a destination for you!
-
-Add a suggestion
-
+## Welcome to VacationBrain
+Create an account to add a trip:
+Give your trip a name and tell us what you're looking for in a vacation and how long you're travelling for. Other VacationBrain users will suggest a destination for you!
+Add a suggestion:
 Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.
 
-The live VacationBrain client app can be found deployed on Heroku at https://ethan-vb-client.herokuapp.com/.
-You can create an account or use the demo account (username: demo, password: password)
+## App Screenshots
 
-The backend of the app is deployed on Heroku at https://ethan-vb-server.herokuapp.com/ and the server repo can be found at https://github.com/thinkful-ei26/ethan-vb-server.
+## Tech Specs: 
+**Front-end:**
+- React
+- Redux
+- Javascript
+- HTML5
 
-The app is built on the MERN stack. 
-The client side uses React with Redux for state managemeent and Redux Form for form management. 
-The server side uses Node with Express and Mongoose to communicate with a MongoDB database hosted on mLab at https://mlab.com/databases/ethan-vb-db
+**Back-end**
+- Node
+- Express
+- MongoDB hosted on mLab
+- JWT 
+- Passport 
 
-### Client codebase structure: 
+## Links
+[Client Repo](https://github.com/thinkful-ei26/ethan-vb-client)
 
-Src
-   
-   Components
-      
-      App.js
-      
-      All-trips-list.js
-      
-      Info-modal.js
-      
-      New-trip-input.js
-      
-      New-trip.js
-      
-      Trip-suggestion.js
-   
-   Actions
-      
-      Trips.js
-   
-   Reducers
-      
-      Trips.js
-      
-      Index.js
-   
-   Tests
-   
-   Validators.js
-   
-   Index.js
-   
-   Store.js
-   
-   Config.js
-   
-   
-Server codebase structure
-   
-   Models
-   
-      Trip.js
-   
-   Routes
-      
-      Trips.js
-   Data
-      
-      Trip-data.js
-   
-   Test
-   
-   Utils
-   
-   Index.js
-   
-   DB-Mongoose.js
-   
-   Config.js
-   
-   
-   
+[Deployed Server On Heroku](https://ethan-vb-server.herokuapp.com/)
 
-Relevant Images:
-User Instructions:
+[Deployed Client On Heroku](https://ethan-vb-client.herokuapp.com/)
 
-![User Instructions](../master/readme-images/vb-v1-info-modal.PNG)
-      
-New Trip Form:
+## Schema
+### User
+```
+{
+  firstName:  {type: String, required: true},
+  lastName: {type: String, required: true},
+  username: {type: String, required: true, unique: true},
+  password: {type: String, required: true}
+}
+```
 
-![New Trip](../master/readme-images/vb-v1-add-trip.PNG)
-      
-Trip List:
+### Post
+```
+{ 
+  name: String,
+  selectedOptions: [{ type: String, required: true }],
+  duration: { type: String, required: true },
+  suggestions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Suggestion'}],
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+}
+```
 
-![Trip List](../master/readme-images/vb-v1-trip-list.PNG)
-      
-Add Suggestion:
+### Suggestion
+```
+{
+ suggestion: { type: String, required: true },
+  tripId: { type: mongoose.Schema.Types.ObjectId, ref: 'Trip', required: true  },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+}
+```
 
-![Add Suggestion](../master/readme-images/vb-v1-add-suggestion.PNG)
+## API Overview
+```        
+/api
+.
+├── /auth
+│   └── POST
+│       ├── /login
+│       ├── /refresh
+│       └── /refresh-profile
+├── /users
+│   └── POST /
+├── /trips
+│   └── GET 
+│       ├── /trips
+│       ├── /my-trips
+│   └── POST /
+├── /suggestions
+│   └── POST /:id
+```
+
