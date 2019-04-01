@@ -113,6 +113,7 @@ class SidebarNav extends React.Component{
     );
   }
 }
+
 const mapStateToProps = state => ({
   display: state.navigation.display,
   loggedIn: state.auth.currentUser !== null,

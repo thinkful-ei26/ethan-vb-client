@@ -11,11 +11,6 @@ import LoginForm from './login-form';
 
 export class App extends React.Component {
   render(){
-    // if (this.props.modal){
-    //   return (
-    //     <InfoModal />);
-    // } else {
-      // console.log(this.props);
       return (
         <div>
           {/* <Route path="/" component={Navbar} /> */}

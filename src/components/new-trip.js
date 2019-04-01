@@ -1,10 +1,11 @@
 import React from 'react';
 
+import {connect} from 'react-redux';
 import {Field, reduxForm, reset} from 'redux-form';
-// import Multiselect from 'react-widgets/lib/Multiselect';
 
 import Input from './new-trip-input';
 import {addTrip} from '../actions/trips';
+import { display } from '../actions/navigation'
 import {required, notEmpty} from '../validators';
 
 import './new-trip.css';
@@ -62,9 +63,11 @@ export class NewTripForm extends React.Component {
     }
     this.props.dispatch(addTrip(newTrip));
     this.props.dispatch(reset('NewTrip'));
+    this.props.dispatch(display('all-trips'));
   }
 
   render(){
+    console.log(this.props);
     return (
     <div className="form-container">
     <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
@@ -198,6 +201,10 @@ export class NewTripForm extends React.Component {
     )}
 }
 
-export default reduxForm({
+const mapStateToProps = state => ({
+  display: state.navigation.display,
+});
+
+export default connect(mapStateToProps)(reduxForm({
   form: 'NewTrip'
-})(NewTripForm)
+})(NewTripForm))
