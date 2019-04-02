@@ -24,7 +24,7 @@ Have great vacation ideas of your own? Submit a suggestion for other users' requ
 - Passport 
 
 ## Links
-[Client Repo](https://github.com/thinkful-ei26/ethan-vb-client)
+[Server Repo](https://github.com/thinkful-ei26/ethan-vb-server)
 
 [Deployed Server On Heroku](https://ethan-vb-server.herokuapp.com/)
 
