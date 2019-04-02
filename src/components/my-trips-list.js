@@ -23,7 +23,7 @@ export class MyTripsList extends React.Component {
           <div className="trip-recommendation-container">
             {trip.suggestions.length > 0 &&
             <div className="trip-recommendations">
-              <h4>Other VacationBrain users have already recommended:</h4>
+              <h4>Already Recommended:</h4>
               <ul>
                 {trip.suggestions.map(suggestion => <li key={suggestion.id}> {suggestion.suggestion} </li>)}
               </ul>

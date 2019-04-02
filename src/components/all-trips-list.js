@@ -30,7 +30,7 @@ export class AllTripsList extends React.Component {
             <h4>Where should {trip.name} go?</h4>
             {trip.suggestions.length > 0 &&
             <div className="trip-recommendations">
-              <h5>Other VacationBrain users have already recommended:</h5>
+              <h5>Already Recommended:</h5>
               <ul>
                 {trip.suggestions.map(suggestion => <li key={suggestion.id}> {suggestion.suggestion} </li>)}
               </ul>
