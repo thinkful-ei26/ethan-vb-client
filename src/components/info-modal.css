@@ -155,6 +155,10 @@
   .overlay h1, .overlay h2, .overlay .form-section {
     margin: auto;
     flex-direction: column;
+    width: 350px
+  }
+
+  .intro {
     width: 100%
   }
 
@@ -162,7 +166,7 @@
     margin: auto
   }
 
-  .overlay .about, .overlay .intro {
+  .overlay .about {
     margin: auto;
     flex-direction: column;
     width: 350px
