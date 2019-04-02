@@ -4,18 +4,66 @@
   padding: 5px; */
   display: flex;
   flex-direction: column
-
 }
 
-.overlay section, .overlay h1, .overlay h2 {
+.parallax {
+  background-image: url('../beach-foam-iphone-wallpaper-533923.jpg');
+  background-attachment: fixed;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  position: relative;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.intro {
+  position: absolute;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.overlay .form-section, .overlay h1 {
   display: flex;
   margin: auto;
   flex-direction: column;
   width: 400px
 }
 
+.overlay h1 {
+  font-size: 2.4em;
+  padding-bottom: 5px
+}
+
+.tagline {
+  margin: 0 auto;
+  color: #FFF6EB;
+  text-align: center;
+  padding-bottom: 20px
+}
+
+.overlay h2 {
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 350px
+}
+
+.overlay .form-section {
+  background-color: #FFF6EB;
+  border-radius: 8px; 
+  padding: 10px;
+}
+
 .overlay h1, .overlay h2 {
   text-align: center
+}
+
+.overlay h1 {
+  color: #FFF6EB
 }
 
 .overlay form {
@@ -26,14 +74,44 @@
 
 .overlay .form-input{
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   margin: 20px auto;
   align-items: center;
 }
 
+.overlay label {
+  padding: 5px;
+  flex: .75 1;
+  font-weight: bold
+}
+
+.submit {
+  margin: auto;
+  display: block;
+  width: 120px
+}
+
+.link-to-form {
+  text-decoration: none;
+  color: #E06500;
+  font-weight: 700;
+  background: none;
+  border: 0;
+  outline: 0;
+  font-size: 18px;
+  cursor: pointer;
+  text-shadow: none;
+  border-radius: 0px;
+  box-shadow: none;
+}
+
+.overlay p {
+  margin: 10px;
+  font-weight: bold
+}
 
 .overlay input {
-  width: 190px;
+  max-width: 200px;
   height: 16px;
   color: black;
   font-size: 18px;
@@ -44,14 +122,36 @@
   letter-spacing: 0.3px;
   border-radius: 20px;
   background-color: #d9e4e8;
-  text-indent: 10px;
   border-radius: 5px;
   flex: 1 1;
   padding: 5px;
 }
 
+.about {
+  display: flex;
+  padding: 30px;
+  background-color: #FFF6EB;
+
+}
+
+.about-description {
+  flex: 1 1;
+  border-radius: 8px; 
+}
+
+.mockup {
+  width: 75%;
+  height: 75%;
+  max-height: 450px;
+  max-width: 650px;
+}
+
+.about-description h2 {
+  padding-bottom: 20px
+}
+
 @media screen and (max-width: 479px) {
-  .overlay section, .overlay h1, .overlay h2, .overlay form {
+  .overlay h1, .overlay h2, .overlay form {
     margin: auto;
     flex-direction: column;
     width: 350px

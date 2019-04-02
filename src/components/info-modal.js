@@ -6,6 +6,8 @@ import {Redirect} from 'react-router-dom';
 import LogInForm from './login-form';
 import SignUpForm from './sign-up-form';
 
+import mockup from '../smartmockups_ju066xnd.png';
+
 import './info-modal.css'
 
 export class InfoModal extends React.Component{
@@ -17,24 +19,20 @@ export class InfoModal extends React.Component{
 
     return (
         <div className="overlay">
-            <header role="banner"><h1>Welcome to VacationBrain! Here's how it works:</h1></header>
-            <section>
-                <p><strong>Create an account to add a trip</strong></p>
-                <ul>
-                    <li>Give your trip a name and tell us what you're looking for in a vacation and how long you're travelling for.</li>
-                    <li>Other VacationBrain users will suggest a destination for you!</li>
-                </ul>
-            </section>
-            <section>
-                <p><strong>Add a suggestion</strong></p>
-                <ul>
-                    <li>Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.</li>
-                </ul>
-            </section>
-            <section>
-            <section className="form-section">
+            <section className="parallax"></section>
+            <section className="intro">
+                <h1>Welcome to VacationBrain</h1>
+                <p className="tagline">Find your next great vacation destination!</p>
+                <section className="form-section">
                     {this.props.display==="loginUsername" ? <LogInForm /> : this.props.display==="registerUsername" ? <SignUpForm /> : <LogInForm /> }
                 </section>
+            </section>
+            <section className="about">
+                <div className="about-description">
+                    <h2>Your next trip is right here</h2>
+                    <p>Can't figure out where to go on your next trip? Check out VacationBrain. You can easily add a trip and get recommendations from the VacationBrain community. Have a great idea of your own? Recommend it to other users!</p>
+                </div>
+                <img className="mockup" src={mockup} alt="mockup"/>            
             </section>
         </div>
         )
