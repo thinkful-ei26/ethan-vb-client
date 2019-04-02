@@ -59,7 +59,7 @@ legend {
     letter-spacing: 0.3px;
     border-radius: 20px;
     background-color: #d9e4e8;
-    text-indent: 10px;
+    text-indent: 5px
 }
 
 input[type=number]::-webkit-inner-spin-button, 
