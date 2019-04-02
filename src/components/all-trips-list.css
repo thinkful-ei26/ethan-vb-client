@@ -15,6 +15,8 @@ h1, h2, h4, h5 {
 
 h1 {
   width: 450px;
+  color: #FFF6EB;
+  text-shadow: 1px 1px #E06500;
   text-align: center;
   padding: 25px
 }
@@ -68,11 +70,6 @@ h1 {
   padding-bottom: 5px
 }
 
-/* .trip-selections {
-  margin: 0 auto;
-  width: 250px
-} */
-
 .trip-suggestion {
   margin: 0 auto;
   width: 400px;
@@ -88,10 +85,21 @@ h1 {
   width: 300px
 }
 
+.open-sidebar {
+  margin: 15px;
+  border-radius: 8px
+}
+
 @media only screen and (min-width: 640px) {
   .all-trips-container{
     display: flex;
     flex-flow: row wrap;
     justify-content: center
+  }
+}
+
+@media screen and (max-width: 589px) {
+  .trip-suggestion, .trip-recommendations, .trip-content, h1, h2, h4, h5 {
+    width: 325px;
   }
 }

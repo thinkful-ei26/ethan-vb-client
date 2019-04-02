@@ -89,7 +89,7 @@ button {
   font-weight: normal;
   color: #ffffff;
   background-color: #E06500;
-  border-radius: 15px;
+  border-radius: 8px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
 }
 
@@ -111,3 +111,13 @@ button:focus, button:hover{
 input[type=checkbox]:checked + label {
   color: #f00;
 } 
+
+@media screen and (max-width: 589px) {
+  .form-container {
+    width: 325px;
+  }
+
+  form h1 {
+    width: 300px
+  }
+}
