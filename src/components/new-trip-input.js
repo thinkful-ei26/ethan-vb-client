@@ -19,11 +19,6 @@ export default class Input extends React.Component{
 
     return(
       <div className="trip-option">
-        <label htmlFor={this.props.input.name}>
-          {this.props.label}
-          {error}
-          {warning}
-        </label>
         <div className={this.props.type}>
          <Element
             {...this.props.input}
@@ -34,6 +29,11 @@ export default class Input extends React.Component{
             {this.props.children}
           </Element>
         </div>
+        <label htmlFor={this.props.input.name}>
+          {this.props.label}
+          {error}
+          {warning}
+        </label>
       </div>
 
 

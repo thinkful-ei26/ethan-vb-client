@@ -174,7 +174,7 @@ export class NewTripForm extends React.Component {
         name="gambling" 
       />
     </fieldset>
-    <fieldset>
+    <fieldset className="select-options">
       <legend>Trip Details</legend>
       <Field 
         component={Input}
@@ -195,7 +195,9 @@ export class NewTripForm extends React.Component {
         validate={[required, notEmpty]} 
       />
       </fieldset>
-      <button type="submit">Add your trip!</button>
+      <div className="new-trip-submit">
+        <button type="submit">Add your trip!</button>
+      </div>
     </form>
     </div>
     )}

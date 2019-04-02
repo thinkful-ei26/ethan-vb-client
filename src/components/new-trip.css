@@ -1,8 +1,18 @@
-form {
+.form-container {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 400px;
+  padding: 5px;
+  background-color: #FFF6EB;
+  border-radius: 8px
+}
+
+/* form {
   margin: 0 auto;
   width: 400px;
   padding: 5px;
-}
+  /* background-color: #FFF6EB */
+
 
 form h1 {
   text-align: center;
@@ -16,12 +26,15 @@ button{
 
 fieldset {
   border: 0 none;
-  padding: 0
+  padding: 10px;
+  margin: 0 auto;
+  width: 300px
 }
 
 legend {
   padding-bottom: 5px;
-  margin-bottom: 10px
+  font-weight: bold
+  /* margin-bottom: 10px */
 }
 
 .form-container {
@@ -78,6 +91,13 @@ button {
   background-color: #E06500;
   border-radius: 15px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.new-trip-submit {
+  margin: 0 auto;
+  width: 200px;
+  padding-top: 10px;
+  padding-bottom: 20px 
 }
 
 button:focus, button:hover{

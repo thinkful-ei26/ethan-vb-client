@@ -18,8 +18,8 @@ export class MyTripsList extends React.Component {
             <ul> 
               {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
             </ul>
+            <p>Trip Length: <strong>{trip.duration}</strong> days</p>
           </div>
-          <p>Trip Length: <strong>{trip.duration}</strong> days</p>
           <div className="trip-recommendation-container">
             {trip.suggestions.length > 0 &&
             <div className="trip-recommendations">
