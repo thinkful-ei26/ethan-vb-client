@@ -7,7 +7,7 @@ Add a suggestion:
 Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.
 
 ## App Screenshot
-<img src='./smartmockups_ju066xnd.png' alt='Device Screenshot' width='900px'/>
+![Device Screenshots](https://github.com/thinkful-ei26/ethan-vb-client/blob/master/src/smartmockups_ju066xnd.png)
 
 ## Tech Specs: 
 **Front-end:**
