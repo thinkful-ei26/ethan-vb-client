@@ -17,12 +17,15 @@ export class AllTripsList extends React.Component {
       <section className="trip-object" key={trip.id}>
         <div className="trip-content">
           <div className="trip-options">
-            <h3>{trip.name}'s Desired Options are</h3>
-            <ul> 
-              {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
-            </ul>
+            <h3>{trip.name}</h3>
+            <div className="trip-selections">
+              <p>{trip.name} is looking for</p>
+              <ul> 
+                {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
+              </ul>
+              <p className="trip-length">in a trip that will last <strong>{trip.duration}</strong> days</p>
+            </div>
           </div>
-          <p>Trip Length: <strong>{trip.duration}</strong> days</p>
           <div className="trip-recommendation-container">
             <h4>Where should {trip.name} go?</h4>
             {trip.suggestions.length > 0 &&
@@ -38,12 +41,12 @@ export class AllTripsList extends React.Component {
         </div>
       </section>);
     return (
-      <main>
-        <h1>Everyone's Trips:</h1>
+      <div className="trips-and-header-container">
+        <h1>Everyone's Trips</h1>
         <div className="all-trips-container">
           {tripsList}
         </div>
-      </main>
+      </div>
     )
   }
 }
