@@ -6,7 +6,8 @@ Give your trip a name and tell us what you're looking for in a vacation and how 
 Add a suggestion:
 Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.
 
-## App Screenshots
+## App Screenshot
+<img src='./smartmockups_ju066xnd.png' alt='Device Screenshot' width='900px'/>
 
 ## Tech Specs: 
 **Front-end:**
