@@ -14,7 +14,7 @@ export class MyTripsList extends React.Component {
       <section className="trip-object" key={trip.id}>
         <div className="trip-content">
           <div className="trip-options">
-            <h3>For {trip.name}, you're looking for</h3>
+            <h3>For {trip.name}, I'm looking for</h3>
             <ul> 
               {trip.selectedOptions.map((option, index) => <li key={index}> {option} </li>)}
             </ul>
@@ -34,7 +34,7 @@ export class MyTripsList extends React.Component {
       </section>);
     return (
       <main>
-        <h1>Your Trips:</h1>
+        <h1>My Trips</h1>
         <div className="all-trips-container">
           {tripsList}
         </div>

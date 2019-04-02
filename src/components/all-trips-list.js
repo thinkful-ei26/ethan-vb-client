@@ -42,7 +42,7 @@ export class AllTripsList extends React.Component {
       </section>);
     return (
       <div className="trips-and-header-container">
-        <h1>Everyone's Trips:</h1>
+        <h1>Everyone's Trips</h1>
         <div className="all-trips-container">
           {tripsList}
         </div>

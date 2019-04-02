@@ -24,7 +24,7 @@ class TripSuggestion extends React.Component{
       <Field 
             component={Input}
             element="input"
-            label="Your suggestion:" 
+            label="Your suggestion" 
             type="input"
             name="suggestion" 
             validate={required} 

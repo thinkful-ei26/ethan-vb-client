@@ -144,6 +144,7 @@
   height: 75%;
   max-height: 450px;
   max-width: 650px;
+  padding: 10px
 }
 
 .about-description h2 {
@@ -151,7 +152,17 @@
 }
 
 @media screen and (max-width: 479px) {
-  .overlay h1, .overlay h2, .overlay form {
+  .overlay h1, .overlay h2, .overlay .form-section {
+    margin: auto;
+    flex-direction: column;
+    width: 100%
+  }
+
+  .overlay form {
+    margin: auto
+  }
+
+  .overlay .about, .overlay .intro {
     margin: auto;
     flex-direction: column;
     width: 350px
