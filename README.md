@@ -1,4 +1,4 @@
-# [VacationBrain](https://ethan-vb-client.herokuapp.com/)
+# [VacationBrain](https://vacationbrain.herokuapp.com/)
 
 ## Welcome to VacationBrain
 Create an account to add a trip:
@@ -28,7 +28,7 @@ Have great vacation ideas of your own? Submit a suggestion for other users' requ
 
 [Deployed Server On Heroku](https://ethan-vb-server.herokuapp.com/)
 
-[Deployed Client On Heroku](https://ethan-vb-client.herokuapp.com/)
+[Deployed Client On Heroku](https://vacationbrain.herokuapp.com/)
 
 ## Schema
 ### User
