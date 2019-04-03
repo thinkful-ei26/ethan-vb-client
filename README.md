@@ -1,10 +1,8 @@
 # [VacationBrain](https://vacationbrain.herokuapp.com/)
 
 ## Welcome to VacationBrain
-Create an account to add a trip:
-Give your trip a name and tell us what you're looking for in a vacation and how long you're travelling for. Other VacationBrain users will suggest a destination for you!
-Add a suggestion:
-Have great vacation ideas of your own? Submit a suggestion for other users' requested trips.
+Can't figure out where to go on your next trip? Check out VacationBrain. You can easily add a trip and get recommendations from the VacationBrain community. Have a great idea of your own? Recommend it to other users!
+
 
 ## App Screenshot
 ![Device Screenshots](https://github.com/thinkful-ei26/ethan-vb-client/blob/master/src/smartmockups_ju066xnd.png)
